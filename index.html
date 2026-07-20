@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Maestre — Research & Engineering Portfolio</title>
+    <!-- Tailwind CSS CDN for modern utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom animation smoothing */
+        .modal-transition {
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans">
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold tracking-tight text-white">Paul MAESTRE</h1>
+                <p class="text-sm text-blue-400 font-medium">Ingénieur Généraliste (ECL) & Master of Information Sciences (Tohoku)</p>
+            </div>
+            <!-- Dynamic CV downloads and social link tags -->
+            <div class="flex flex-wrap items-center gap-3">
+                <a href="./cv_english.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-download"></i> CV (EN)
+                </a>
+                <a href="./cv_french.pdf" download class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-slate-750 transition-colors">
+                    <i class="fa-solid fa-download"></i> CV (FR)
+                </a>
+                <a href="https://www.linkedin.com/in/paul-maestre-922ab0238/" target="_blank" class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/paulm-08" target="_blank" class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:paulmaestre08@gmail.com" class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 flex-grow w-full">
+        <!-- INTRO TAGLINE -->
+        <section class="max-w-3xl mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+                Engineering multi-disciplinary physical systems and modern AI.
+            </h2>
+            <p class="text-lg text-slate-300 leading-relaxed">
+                Diplômé de l'École Centrale de Lyon et de l'Université de Tohoku au Japon, je conçois des solutions à la croisée de l'automatique, de la vision par ordinateur, du contrôle matériel et du génie thermique. Découvrez mes projets de recherche et réalisations d'ingénierie ci-dessous.
+            </p>
+        </section>
+
+        <!-- PROJECT GRID -->
+        <section>
+            <h3 class="text-lg font-bold text-slate-400 uppercase tracking-widest mb-8">Selected Projects & Research</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- CARD 1: ViHaTeleop (Direct External Link to Co-Author Page) -->
+                <a href="https://laiyanhou.github.io/ViHaTeleop-website/" target="_blank" class="group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
+                        <!-- Thumbnail fallback / replace with actual GIF/Image later -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-slate-950/40 text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-robot text-4xl"></i>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">IROS 2026</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 text-xs text-blue-400 font-semibold mb-1">
+                                <span>Co-Author Research</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">ViHaTeleop</h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">A visual-haptic teleoperation system for dexterous manipulation learning. Hosted on our dedicated project page.</p>
+                        </div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4">Visit Research Website &rarr;</div>
+                    </div>
+                </a>
+
+                <!-- CARD 2: Master's Thesis (Dynamic Modal) -->
+                <div onclick="openModal('masters-thesis')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-fingerprint text-4xl"></i>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded">Tohoku Univ.</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-emerald-400 font-semibold">Master's Thesis Project</span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mt-1">Robot Learning with Vision & Touch</h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Autonomous soft tube insertion via behavior cloning on a Franka FR3 arm & custom GelSight optical-tactile sensors.</p>
+                        </div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Autonomous Drone (Dynamic Modal) -->
+                <div onclick="openModal('autonomous-drone')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-helicopter text-4xl"></i>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded">Centrale Lyon</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-purple-400 font-semibold">Systems & Control</span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mt-1">Autonomous Flight Control</h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Implementing real-time object tracking and centering loops on a custom drone system using PID optimization loops.</p>
+                        </div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: INSA Lyon Ultrasound (Dynamic Modal) -->
+                <div onclick="openModal('ultrasound')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-wave-square text-4xl"></i>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-bold px-2 py-1 rounded">INSA Lyon</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-amber-400 font-semibold">Biomedical Engineering</span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mt-1">3D Ultrasound Reconstruction</h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Integrating electromagnetic trakSTAR spatial trackers with raw ultrasound captures to construct volumetric representations.</p>
+                        </div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                    </div>
+                </div>
+
+                <!-- CARD 5: Air Force Base Audit (Dynamic Modal) -->
+                <div onclick="openModal('energy-audit')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-fire text-4xl"></i>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">Air Force</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-red-400 font-semibold">Thermodynamics & Energy</span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-red-400 transition-colors mt-1">Base 942 Audit & Recovery</h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Full modeling of waste heat recovery (1.25 MW) from operational server facilities for regional infrastructure heating loops.</p>
+                        </div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                    </div>
+                </div>
+
+                <!-- CARD 6: Twitch Broadcast & Stream (Dynamic Modal) -->
+                <div onclick="openModal('twitch-stream')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-tower-broadcast text-4xl"></i>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-violet-600 text-white text-[10px] font-bold px-2 py-1 rounded">Extracurricular</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-xs text-violet-400 font-semibold">Systems Integration & AV</span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors mt-1">Live Broadcast Systems</h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Coordinating multi-camera live feeds, capture cards, and high-stress technical engineering setups for esports events.</p>
+                        </div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-slate-500 text-xs">
+        <div class="max-w-5xl mx-auto px-6">
+            <p>&copy; 2026 Paul MAESTRE. Powered by GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE DETAIL MODAL OVERLAY -->
+    <div id="projectModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none modal-transition p-4">
+        <div class="bg-slate-850 bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 modal-transition">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Media Container (Placeholder or dynamic video player) -->
+            <div id="modalMediaContainer" class="w-full aspect-video bg-slate-950 rounded-t-2xl relative flex items-center justify-center text-slate-600 border-b border-slate-800">
+                <i class="fa-solid fa-play text-6xl"></i>
+            </div>
+
+            <!-- Text Content Container -->
+            <div class="p-8">
+                <span id="modalCategory" class="text-xs font-bold uppercase tracking-wider text-blue-400">Category</span>
+                <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-1">Project Title</h3>
+                
+                <p id="modalDescription" class="text-slate-300 mt-4 leading-relaxed">Detailed project description goes here.</p>
+
+                <!-- Technical highlights and list bullets -->
+                <div class="mt-6 border-t border-slate-800 pt-6">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Technical Highlights</h4>
+                    <ul id="modalHighlights" class="space-y-2.5 text-sm text-slate-300">
+                        <!-- Dynamic list injection -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- DYNAMIC DATA & MODAL INTERACTION CONTROLS -->
+    <script>
+        // Projects details dictionary containing the technical content, media type, and bullet points
+        const projectData = {
+            'masters-thesis': {
+                title: 'Robot Learning with Vision & Touch',
+                category: "Master's Thesis — Tohoku University",
+                description: 'This research combined advanced hand-arm teleoperation tracking with closed-loop tactile feedback to teach a Franka FR3 manipulator arm to autonomously insert highly deformable soft tubes into restricted compartments.',
+                mediaHtml: `<video class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="https://github.com/user-attachments/assets/fe719290-7a36-4999-a4d1-25fd29fce894"></video>`,
+                highlights: [
+                    'Co-authored the <strong>ViHaTeleop</strong> software architecture accepted for publication at <strong>IROS 2026</strong>.',
+                    'Engineered real-time hand-arm retargeting optimizing high-DOF coordinate streams with real haptic feedback.',
+                    'Trained an end-to-end <strong>Behavior Cloning</strong> policy model using a custom-built dataset of over 300 successful trajectories.',
+                    'Integrated multi-axis optical-tactile <strong>GelSight</strong> sensors alongside YOLO depth-guided camera clusters.'
+                ]
+            },
+            'autonomous-drone': {
+                title: 'Autonomous Drone Flight Control',
+                category: 'Generalist Engineering — Centrale Lyon',
+                description: 'Designed and deployed an integrated software stack controlling physical drone platforms navigating GPS-denied environments. The project leveraged rapid vision loops to command physical motors to lock onto coordinate centers.',
+                mediaHtml: `<div class="text-center p-8"><i class="fa-solid fa-helicopter text-5xl mb-4 text-purple-400"></i><p class="text-sm text-slate-400">Drone tracking loop active. Built using local PID controllers and real-time bounding coordinate calculations.</p></div>`,
+                highlights: [
+                    'Built discrete-time $PID$ feedback controllers regulating altitude, pitch, and yaw for stable station-keeping.',
+                    'Interfaced deep-learning object detector models (YOLO) calculating offsets to target centroids.',
+                    'Engineered gradient descent pathways dynamically managing trajectory generation vectors.',
+                    'Managed core communication protocols linking software environments directly to platform hardware.'
+                ]
+            },
+            'ultrasound': {
+                title: '3D Freehand Ultrasound Reconstruction',
+                category: 'Engineering Internship — INSA Lyon / Ampère Lab',
+                description: 'Designed and engineered an automated volumetric imaging suite utilizing MATLAB to capture 2D frame sequences paired with high-precision electromagnetic trackers in three dimensions.',
+                mediaHtml: `<div class="text-center p-8"><i class="fa-solid fa-wave-square text-5xl mb-4 text-amber-400"></i><p class="text-sm text-slate-400">Volumetric reconstruction suite operating via trakSTAR sensors.</p></div>`,
+                highlights: [
+                    'Created high-frequency hardware synchronization loops integrating physical ultrasound feeds with spatial positional tracking.',
+                    'Developed custom spatial binning and interpolation routines in MATLAB to process complex voxel clouds.',
+                    'Established calibration processes linking tracker matrices to coordinates in ultrasound space.',
+                    'Delivered working software allowing medical researchers to visualize complex 3D scans.'
+                ]
+            },
+            'energy-audit': {
+                title: 'Air Force Base 942 Thermodynamic Audit',
+                category: 'Industrial Partnership — French Air Force',
+                description: 'Analyzed massive thermal cooling systems on a strategic defense installation, quantifying exactly how much wasted server heat could be redirected to power regional infrastructure.',
+                mediaHtml: `<div class="text-center p-8"><i class="fa-solid0 fa-fire text-5xl mb-4 text-red-500"></i><p class="text-sm text-slate-400">Calculated Thermodynamic waste flow: $1.25\\text{ MW}$ continuous potential.</p></div>`,
+                highlights: [
+                    'Calculated $1.25\\text{ MW}$ of recoverable heat waste ($Q = \\dot{m} C_p \\Delta T$) from operational server clusters.',
+                    'Engineered solution models integrating heavy industrial heat pumps and custom loop connections.',
+                    'Designed complex thermal network solutions routed to heat municipal facilities and military pools.',
+                    'Validated thermodynamic architectures yielding high return on capital loops.'
+                ]
+            },
+            'twitch-stream': {
+                title: 'Live Audiovisual Streaming Systems',
+                category: 'Technical Leadership — Esports & Community',
+                description: 'Engineered high-definition live broadcasting platforms managing multiple complex local inputs, overlay switches, audio mixing arrays, and high-stakes real-time troubleshooting pipelines.',
+                mediaHtml: `<div class="text-center p-8"><i class="fa-solid fa-tower-broadcast text-5xl mb-4 text-violet-400"></i><p class="text-sm text-slate-400">Managed technical production for competitive tournaments over Twitch.</p></div>`,
+                highlights: [
+                    'Assembled hardware setups linking multi-camera inputs, capture cards, and high-end microphones under OBS pipelines.',
+                    'Programmed dynamic scenes, overlays, and transition states managing high-action video streams.',
+                    'Spearheaded production pipelines generating live coverage to over 2,000 unique audience members.',
+                    'Designed and maintained reliable local communication setups to keep dynamic production workflows synced.'
+                ]
+            }
+        };
+
+        const modal = document.getElementById('projectModal');
+        const modalContainer = modal.querySelector('.max-w-2xl');
+        const mediaContainer = document.getElementById('modalMediaContainer');
+        const categoryLabel = document.getElementById('modalCategory');
+        const titleLabel = document.getElementById('modalTitle');
+        const descLabel = document.getElementById('modalDescription');
+        const highlightsList = document.getElementById('modalHighlights');
+
+        function openModal(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+
+            // Inject the dynamic HTML and texts
+            mediaContainer.innerHTML = data.mediaHtml;
+            categoryLabel.textContent = data.category;
+            titleLabel.textContent = data.title;
+            descLabel.textContent = data.description;
+            
+            // Render bulleted technical points
+            highlightsList.innerHTML = data.highlights.map(pt => `
+                <li class="flex items-start gap-2.5">
+                    <span class="text-blue-500 mt-1 text-xs"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span>${pt}</span>
+                </li>
+            `).join('');
+
+            // Fade in animation
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modalContainer.classList.remove('scale-95');
+            modalContainer.classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // Freeze background scrolling
+        }
+
+        function closeModal() {
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modalContainer.classList.remove('scale-100');
+            modalContainer.classList.add('scale-95');
+            document.body.style.overflow = ''; // Re-enable background scrolling
+            
+            // Pause any active videos after closing
+            const activeVideo = mediaContainer.querySelector('video');
+            if (activeVideo) activeVideo.pause();
+        }
+
+        // Close on clicking overlay outside the container
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModal();
+        });
+    </script>
+</body>
+</html>
