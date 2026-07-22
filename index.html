@@ -25,7 +25,6 @@
                 <p id="heroTitle" class="text-sm text-blue-400 font-medium" 
                    data-en="Generalist Engineer (ECL) & Master of Information Sciences (Tohoku)" 
                    data-fr="Ingénieur Généraliste (ECL) & Master en Sciences de l'Information (Tohoku)">
-                   Ingénieur Généraliste (ECL) & Master en Sciences de l'Information (Tohoku)
                 </p>
             </div>
             <!-- Dynamic CV downloads, social link tags and Language Switcher -->
@@ -61,12 +60,10 @@
             <h2 id="introHeading" class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight"
                 data-en="Engineering multi-disciplinary physical systems and modern AI."
                 data-fr="Ingénierie de systèmes physiques multidisciplinaires et IA moderne.">
-                Ingénierie de systèmes physiques multidisciplinaires et IA moderne.
             </h2>
             <p id="introBody" class="text-lg text-slate-300 leading-relaxed"
-               data-en="Graduate of École Centrale de Lyon and Tohoku University in Japan. I design solutions at the intersection of automatic control, computer vision, hardware integration, and thermal engineering."
-               data-fr="Diplômé de l'École Centrale de Lyon et de l'Université de Tohoku au Japon, je conçois des solutions à la croisée de l'automatique, de la vision par ordinateur, du contrôle matériel et du génie thermique.">
-                Diplômé de l'École Centrale de Lyon et de l'Université de Tohoku au Japon, je conçois des solutions à la croisée de l'automatique, de la vision par ordinateur, du contrôle matériel et du génie thermique.
+               data-en="Graduate of École Centrale de Lyon and Tohoku University in Japan. I design systems integrating automatic control, computer vision and Artificial Intelligence."
+               data-fr="Diplômé de l'École Centrale de Lyon et de l'Université de Tohoku au Japon, je conçois des systèmes qui croisent l'automatique, la vision par ordinateur et l'Intelligence Artificielle.">
             </p>
         </section>
 
@@ -74,8 +71,7 @@
         <section>
             <h3 id="sectionTitle" class="text-lg font-bold text-slate-400 uppercase tracking-widest mb-8"
                 data-en="Selected Projects & Research"
-                data-fr="Projets et Recherches Sélectionnés">
-                Projets et Recherches Sélectionnés
+                data-fr="Sélection de Projets & Recherches">
             </h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -83,121 +79,134 @@
                 <!-- CARD 1: ViHaTeleop -->
                 <a href="https://laiyanhou.github.io/ViHaTeleop-website/" target="_blank" class="group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center bg-slate-950/40 text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/vihateleop_sys_overview.png" alt="Overview of the ViHaTeleop system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <!-- <div class="hidden absolute inset-0 items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-fingerprint text-4xl"></i> -->
+                        <div class="hidden absolute inset-0 flex items-center justify-center bg-slate-950/40 text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-robot text-4xl"></i>
+
                         </div>
-                        <div class="absolute top-3 right-3 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">IROS 2026</div>
+                        <div class="absolute top-3 right-3 bg-purple-800 text-white text-[10px] font-bold px-2 py-1 rounded">Tohoku University</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
                             <div class="flex items-center gap-1 text-xs text-blue-400 font-semibold mb-1">
-                                <span data-en="Co-Author Research" data-fr="Recherche Co-Auteur">Recherche Co-Auteur</span>
+                                <span data-en="Co-Author Research" data-fr="Recherche Co-Auteur"></span>
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                             </div>
                             <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">ViHaTeleop</h4>
-                            <p class="text-sm text-slate-400 mt-2 line-clamp-3" 
-                               data-en="A visual-haptic teleoperation system for dexterous manipulation learning. Hosted on our dedicated project page."
-                               data-fr="Système de téléopération visuo-haptique pour l'apprentissage de la manipulation dextre.">
-                               Système de téléopération visuo-haptique pour l'apprentissage de la manipulation dextre.
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-5" 
+                               data-en="A visual-haptic teleoperation system for dexterous manipulation learning. Soon to be presented at IROS 2026 (IEEE/RSJ International Conference on Intelligent Robots and Systems)."
+                               data-fr="Système de téléopération visuo-haptique pour l'apprentissage de la manipulation dextre. Bientôt présenté à IROS 2026 (Conférence Internationale IEEE/RSJ sur les Robots et Systèmes Intelligents).">
                             </p>
                         </div>
-                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="Visit Research Website &rarr;" data-fr="Voir le site du projet &rarr;">Voir le site du projet &rarr;</div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="Visit Research Website &rarr;" data-fr="Voir le site du projet &rarr;"></div>
                     </div>
                 </a>
 
-                <!-- CARD 2: Master's Thesis (With custom thumbnail robot_cool.png) -->
+                <!-- CARD 2: Master's Thesis -->
                 <div onclick="openModal('masters-thesis')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden flex items-center justify-center">
-                        <!-- Custom Thumbnail Image with fallback icon if image isn't loaded -->
                         <img src="assets/robot_cool.png" alt="Robot Learning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="hidden absolute inset-0 items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-fingerprint text-4xl"></i>
                         </div>
-                        <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded">Tohoku Univ.</div>
+                        <div class="absolute top-3 right-3 bg-purple-800 text-white text-[10px] font-bold px-2 py-1 rounded">Tohoku University</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-emerald-400 font-semibold" data-en="Master's Thesis Project" data-fr="Projet de Thèse de Master">Projet de Thèse de Master</span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mt-1" data-en="Robot Learning with Vision & Touch" data-fr="Apprentissage Robotique Visuo-Tactile">Apprentissage Robotique Visuo-Tactile</h4>
+                            <span class="text-xs text-emerald-400 font-semibold" data-en="Master's Thesis Project" data-fr="Projet de Thèse de Master"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mt-1" data-en="Robot Learning with Vision & Touch" data-fr="Apprentissage Robotique Visuo-Tactile"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-3"
                                data-en="Autonomous soft tube insertion via behavior cloning on a Franka FR3 arm & custom GelSight optical-tactile sensors."
                                data-fr="Insertion autonome de tube flexible par apprentissage par imitation sur bras Franka FR3 et capteurs tactiles GelSight.">
-                               Insertion autonome de tube flexible par apprentissage par imitation sur bras Franka FR3 et capteurs tactiles GelSight.
                             </p>
                         </div>
-                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;">Voir la démonstration &rarr;</div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></div>
                     </div>
                 </div>
 
-                <!-- CARD 3: Autonomous Drone (Dynamic Modal) -->
+                <!-- CARD 3: Autonomous Drone -->
                 <div onclick="openModal('autonomous-drone')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-helicopter text-4xl"></i>
                         </div>
-                        <div class="absolute top-3 right-3 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded">Centrale Lyon</div>
+                        <div class="absolute top-3 right-3 bg-red-800 text-white text-[10px] font-bold px-2 py-1 rounded">Centrale Lyon</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-purple-400 font-semibold">Systems & Control</span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mt-1">Autonomous Flight Control</h4>
-                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Implementing real-time object tracking and centering loops on a custom drone system using PID optimization loops.</p>
+                            <span class="text-xs text-purple-400 font-semibold" data-en="Systems & Control" data-fr="Automatique & Systèmes"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mt-1" data-en="Autonomous Flight Control" data-fr="Contrôle de Vol Autonome"></h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3"
+                               data-en="Real-time object tracking and centering loops on a custom drone system using PID optimization loops."
+                               data-fr="Détection et centrage d'objets en temps réel sur drone physique via boucle de régulation PID.">
+                            </p>
                         </div>
-                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></div>
                     </div>
                 </div>
 
-                <!-- CARD 4: INSA Lyon Ultrasound (Dynamic Modal) -->
+                <!-- CARD 4: INSA Lyon Ultrasound -->
                 <div onclick="openModal('ultrasound')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-wave-square text-4xl"></i>
                         </div>
-                        <div class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-bold px-2 py-1 rounded">INSA Lyon</div>
+                        <div class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">INSA Lyon</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-amber-400 font-semibold">Biomedical Engineering</span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mt-1">3D Ultrasound Reconstruction</h4>
-                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Integrating electromagnetic trakSTAR spatial trackers with raw ultrasound captures to construct volumetric representations.</p>
+                            <span class="text-xs text-amber-400 font-semibold" data-en="Biomedical Engineering" data-fr="Génie Biomédical"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mt-1" data-en="3D Ultrasound Reconstruction" data-fr="Reconstruction Échographique 3D"></h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3"
+                               data-en="Integrating electromagnetic trakSTAR spatial trackers with raw ultrasound captures to construct volumetric representations."
+                               data-fr="Synchronisation d'un capteur électromagnétique trakSTAR avec un échographe pour la reconstruction volumique 3D.">
+                            </p>
                         </div>
-                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></div>
                     </div>
                 </div>
 
-                <!-- CARD 5: Air Force Base Audit (Dynamic Modal) -->
+                <!-- CARD 5: Air Force Base Audit -->
                 <div onclick="openModal('energy-audit')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-fire text-4xl"></i>
                         </div>
-                        <div class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">Air Force</div>
+                        <div class="absolute top-3 right-3 bg-red-800 text-white text-[10px] font-bold px-2 py-1 rounded">Centrale Lyon</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-red-400 font-semibold">Thermodynamics & Energy</span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-red-400 transition-colors mt-1">Base 942 Audit & Recovery</h4>
-                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Full modeling of waste heat recovery (1.25 MW) from operational server facilities for regional infrastructure heating loops.</p>
+                            <span class="text-xs text-red-400 font-semibold" data-en="Thermodynamics & Energy" data-fr="Thermodynamique & Énergie"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-red-400 transition-colors mt-1" data-en="Base 942 Energy Audit" data-fr="Audit Thermique - Base 942"></h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3"
+                               data-en="Full modeling of waste heat recovery (1.25 MW) from operational server facilities for regional infrastructure heating loops."
+                               data-fr="Modélisation complète de la récupération de chaleur fatale (1,25 MW) des serveurs pour le chauffage du site.">
+                            </p>
                         </div>
-                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></div>
                     </div>
                 </div>
 
-                <!-- CARD 6: Twitch Broadcast & Stream (Dynamic Modal) -->
+                <!-- CARD 6: Twitch Broadcast & Stream -->
                 <div onclick="openModal('twitch-stream')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-tower-broadcast text-4xl"></i>
                         </div>
-                        <div class="absolute top-3 right-3 bg-violet-600 text-white text-[10px] font-bold px-2 py-1 rounded">Extracurricular</div>
+                        <div class="absolute top-3 right-3 bg-violet-600 text-white text-[10px] font-bold px-2 py-1 rounded">Associatif</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-violet-400 font-semibold">Systems Integration & AV</span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors mt-1">Live Broadcast Systems</h4>
-                            <p class="text-sm text-slate-400 mt-2 line-clamp-3">Coordinating multi-camera live feeds, capture cards, and high-stress technical engineering setups for esports events.</p>
+                            <span class="text-xs text-violet-400 font-semibold" data-en="Systems Integration & AV" data-fr="Intégration Systèmes & Audiovisuel"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors mt-1" data-en="Live Broadcast Systems" data-fr="Gestion de Régie & Streaming Live"></h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-3"
+                               data-en="Coordinating multi-camera live feeds, capture cards, and high-stress technical engineering setups for esports events."
+                               data-fr="Supervision de régies multi-caméras, cartes d'acquisition et flux direct sous OBS pour événements esport.">
+                            </p>
                         </div>
-                        <div class="text-xs text-slate-500 font-semibold mt-4">View Technical Showcase &rarr;</div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></div>
                     </div>
                 </div>
 
@@ -214,15 +223,15 @@
 
     <!-- INTERACTIVE DETAIL MODAL OVERLAY -->
     <div id="projectModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none modal-transition p-4">
-        <div class="bg-slate-850 bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 modal-transition">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 modal-transition">
             
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors z-10">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Media Container (Placeholder or dynamic video player) -->
-            <div id="modalMediaContainer" class="w-full aspect-video bg-slate-950 rounded-t-2xl relative flex items-center justify-center text-slate-600 border-b border-slate-800">
+            <!-- Media Container -->
+            <div id="modalMediaContainer" class="w-full aspect-video bg-slate-950 rounded-t-2xl relative flex items-center justify-center text-slate-600 border-b border-slate-800 overflow-hidden">
                 <i class="fa-solid fa-play text-6xl"></i>
             </div>
 
@@ -233,11 +242,10 @@
                 
                 <p id="modalDescription" class="text-slate-300 mt-4 leading-relaxed">Detailed project description goes here.</p>
 
-                <!-- Technical highlights and list bullets -->
+                <!-- Technical highlights list -->
                 <div class="mt-6 border-t border-slate-800 pt-6">
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Technical Highlights</h4>
+                    <h4 id="highlightsHeader" class="text-sm font-bold text-white uppercase tracking-wider mb-3" data-en="Technical Highlights" data-fr="Points Clés Techniques">Points Clés Techniques</h4>
                     <ul id="modalHighlights" class="space-y-2.5 text-sm text-slate-300">
-                        <!-- Dynamic list injection -->
                     </ul>
                 </div>
             </div>
@@ -247,9 +255,8 @@
 
     <!-- DYNAMIC DATA & MODAL INTERACTION CONTROLS -->
     <script>
-        let currentLang = 'fr'; // Default language
+        let currentLang = 'fr'; // Default single source of truth language
 
-        // Projects details dictionary containing both FR and EN translations
         const projectData = {
             'masters-thesis': {
                 fr: {
@@ -274,8 +281,7 @@
                         'Integrated multi-axis optical-tactile <strong>GelSight</strong> sensors alongside RealSense cameras.'
                     ]
                 },
-                // Uses your MP4 video asset or fallback URL
-                mediaHtml: `<video class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="assets/thesis_demo.mp4" onerror="this.src='https://github.com/user-attachments/assets/fe719290-7a36-4999-a4d1-25fd29fce894'"></video>`
+                mediaHtml: `<video id="thesisVideo" class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="assets/thesis_demo.mp4" onerror="this.src='https://github.com/user-attachments/assets/fe719290-7a36-4999-a4d1-25fd29fce894'"></video>`
             },
             'autonomous-drone': {
                 fr: {
@@ -283,7 +289,7 @@
                     category: 'Ingénierie Généraliste — Centrale Lyon',
                     description: 'Conception et déploiement d’une suite logicielle régulant un drone physique évoluant en environnement sans GPS.',
                     highlights: [
-                        'Implémentation de régulateurs $PID$ temps discret pour l’altitude, le tangage et le roulis.',
+                        'Implémentation de régulateurs PID temps discret pour l’altitude, le tangage et le roulis.',
                         'Couplage avec le détecteur d’objets YOLO pour calculer le centrage par rapport à la cible.',
                         'Interfaçage des protocoles de communication matériels sous boucle temps réel.'
                     ]
@@ -329,7 +335,7 @@
                     category: 'Projet Industriel — Armée de l’Air',
                     description: 'Audit et modélisation de la récupération de chaleur fatale (1.25 MW) provenant des serveurs informatiques de la base.',
                     highlights: [
-                        'Modélisation de 1.25 MW de potentiel thermique récupérable ($Q = \\dot{m} C_p \\Delta T$).',
+                        'Modélisation de 1.25 MW de potentiel thermique récupérable.',
                         'Proposition de solutions intégrant pompes à chaleur industrielles et réseaux de chaleur.',
                         'Étude de faisabilité pour le chauffage des infrastructures et bassins de la base.'
                     ]
@@ -339,7 +345,7 @@
                     category: 'Industrial Partnership — French Air Force',
                     description: 'Analyzed thermal cooling systems on a defense installation, quantifying recoverable server waste heat.',
                     highlights: [
-                        'Calculated 1.25 MW of recoverable heat waste ($Q = \\dot{m} C_p \\Delta T$) from server clusters.',
+                        'Calculated 1.25 MW of recoverable heat waste from server clusters.',
                         'Engineered solution models integrating heavy industrial heat pumps.',
                         'Designed thermal network routing to heat base infrastructure.'
                     ]
@@ -380,15 +386,18 @@
         const highlightsList = document.getElementById('modalHighlights');
         let currentOpenProjectId = null;
 
-        // Language Switcher Function
-        function toggleLanguage() {
-            currentLang = currentLang === 'fr' ? 'en' : 'fr';
-            document.getElementById('langToggleLabel').textContent = currentLang.toUpperCase() + ' | ' + (currentLang === 'fr' ? 'EN' : 'FR');
-
-            // Update all static data-fr / data-en elements on page
+        // Apply language across all elements dynamically
+        function updateDOM() {
             document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
                 el.innerHTML = el.getAttribute('data-' + currentLang);
             });
+            document.getElementById('langToggleLabel').textContent = currentLang.toUpperCase() + ' | ' + (currentLang === 'fr' ? 'EN' : 'FR');
+        }
+
+        // Language Switcher Function
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            updateDOM();
 
             // If modal is currently open, update its content dynamically
             if (currentOpenProjectId) {
@@ -412,6 +421,12 @@
                     <span>${pt}</span>
                 </li>
             `).join('');
+
+            // Automatically speed up video playback rate in web browser (2x speed)
+            const activeVideo = mediaContainer.querySelector('video');
+            if (activeVideo) {
+                activeVideo.playbackRate = 2;
+            }
         }
 
         function openModal(projectId) {
@@ -437,6 +452,11 @@
 
         modal.addEventListener('click', function(e) {
             if (e.target === modal) closeModal();
+        });
+
+        // Initialize DOM text content on page load from single source of truth
+        window.addEventListener('DOMContentLoaded', () => {
+            updateDOM();
         });
     </script>
 </body>
