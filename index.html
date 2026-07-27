@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
         }
     </style>
 </head>
+
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans">
 
     <!-- HEADER / HERO SECTION -->
@@ -22,32 +24,38 @@
         <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
                 <h1 class="text-2xl font-bold tracking-tight text-white">Paul MAESTRE</h1>
-                <p id="heroTitle" class="text-sm text-blue-400 font-medium" 
-                   data-en="Generalist Engineer (ECL) & Master of Information Sciences (Tohoku)" 
-                   data-fr="Ingénieur Généraliste (ECL) & Master en Sciences de l'Information (Tohoku)">
+                <p id="heroTitle" class="text-sm text-blue-400 font-medium"
+                    data-en="Generalist Engineer (ECL) & Master of Information Sciences (Tohoku)"
+                    data-fr="Ingénieur Généraliste (ECL) & Master en Sciences de l'Information (Tohoku)">
                 </p>
             </div>
             <!-- Dynamic CV downloads, social link tags and Language Switcher -->
             <div class="flex flex-wrap items-center gap-3">
                 <!-- Language Toggle Button -->
-                <button onclick="toggleLanguage()" class="bg-slate-800 hover:bg-slate-700 text-blue-400 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1.5">
+                <button onclick="toggleLanguage()"
+                    class="bg-slate-800 hover:bg-slate-700 text-blue-400 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1.5">
                     <i class="fa-solid fa-globe"></i>
                     <span id="langToggleLabel">FR | EN</span>
                 </button>
 
-                <a href="./assets/MAESTRE_PAUL_CV_en.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                <a href="./assets/MAESTRE_PAUL_CV_en.pdf" download
+                    class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
                     <i class="fa-solid fa-download"></i> CV (EN)
                 </a>
-                <a href="./assets/MAESTRE_PAUL_CV_fr.pdf" download class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                <a href="./assets/MAESTRE_PAUL_CV_fr.pdf" download
+                    class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
                     <i class="fa-solid fa-download"></i> CV (FR)
                 </a>
-                <a href="https://www.linkedin.com/in/paul-maestre-922ab0238/" target="_blank" class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/paul-maestre-922ab0238/" target="_blank"
+                    class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="LinkedIn">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/paulm-08" target="_blank" class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="GitHub">
+                <a href="https://github.com/paulm-08" target="_blank"
+                    class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="mailto:paulmaestre08@gmail.com" class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="Email">
+                <a href="mailto:paulmaestre08@gmail.com"
+                    class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="Email">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
             </div>
@@ -62,176 +70,235 @@
                 data-fr="Ingénierie de systèmes physiques multidisciplinaires et IA moderne.">
             </h2>
             <p id="introBody" class="text-lg text-slate-300 leading-relaxed"
-               data-en="Graduate of École Centrale de Lyon and Tohoku University in Japan. I design systems integrating automatic control, computer vision and Artificial Intelligence."
-               data-fr="Diplômé de l'École Centrale de Lyon et de l'Université de Tohoku au Japon, je conçois des systèmes qui croisent l'automatique, la vision par ordinateur et l'Intelligence Artificielle.">
+                data-en="Graduate of École Centrale de Lyon and Tohoku University in Japan. I design systems integrating automatic control, computer vision and Artificial Intelligence."
+                data-fr="Diplômé de l'École Centrale de Lyon et de l'Université de Tohoku au Japon, je conçois des systèmes qui croisent l'automatique, la vision par ordinateur et l'Intelligence Artificielle.">
             </p>
         </section>
 
         <!-- PROJECT GRID -->
         <section>
             <h3 id="sectionTitle" class="text-lg font-bold text-slate-400 uppercase tracking-widest mb-8"
-                data-en="Selected Projects & Research"
-                data-fr="Sélection de Projets & Recherches">
+                data-en="Selected Projects & Research" data-fr="Sélection de Projets & Recherches">
             </h3>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- CARD 1: ViHaTeleop -->
-                <a href="https://laiyanhou.github.io/ViHaTeleop-website/" target="_blank" class="group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                <a href="https://laiyanhou.github.io/ViHaTeleop-website/" target="_blank"
+                    class="group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
                         <!-- <img src="assets/vihateleop_sys_overview.png" alt="Overview of the ViHaTeleop system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"> -->
-                        <img src="assets/ViHaTeleop egg blur.jpg" alt="Overview of the ViHaTeleop system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden absolute inset-0 flex items-center justify-center bg-slate-950/40 text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/ViHaTeleop egg blur.jpg" alt="Overview of the ViHaTeleop system"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div
+                            class="hidden absolute inset-0 flex items-center justify-center bg-slate-950/40 text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-robot text-4xl"></i>
 
                         </div>
-                        <div class="absolute top-3 right-3 bg-purple-800 text-white text-[10px] font-bold px-2 py-1 rounded">Tohoku University</div>
+                        <div
+                            class="absolute top-3 right-3 bg-purple-800 text-white text-[10px] font-bold px-2 py-1 rounded">
+                            Tohoku University</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <div class="flex items-center gap-1 text-xs text-blue-400 font-semibold mb-1">
+                            <div class="flex items-center gap-1 text-xs text-emerald-400 font-semibold mb-1">
                                 <span data-en="Co-Author Research" data-fr="Recherche Co-Auteur"></span>
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                             </div>
-                            <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">ViHaTeleop</h4>
-                            <p class="text-sm text-slate-400 mt-2 line-clamp-5" 
-                               data-en="A visual-haptic teleoperation system for dexterous manipulation learning. Soon to be presented at IROS 2026 (IEEE/RSJ International Conference on Intelligent Robots and Systems)."
-                               data-fr="Système de téléopération visuo-haptique pour l'apprentissage de la manipulation dextre. Bientôt présenté à IROS 2026 (Conférence Internationale IEEE/RSJ sur les Robots et Systèmes Intelligents).">
+                            <h4 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                ViHaTeleop</h4>
+                            <p class="text-sm text-slate-400 mt-2 line-clamp-5"
+                                data-en="A visual-haptic teleoperation system for dexterous manipulation learning. Soon to be presented at IROS 2026 (IEEE/RSJ International Conference on Intelligent Robots and Systems)."
+                                data-fr="Système de téléopération visuo-haptique pour l'apprentissage de la manipulation dextre. Bientôt présenté à IROS 2026 (Conférence Internationale IEEE/RSJ sur les Robots et Systèmes Intelligents).">
                             </p>
                         </div>
                         <div class="text-xs text-slate-500 font-semibold mt-4 flex items-center justify-between">
-                            <span data-en="Visit Research Website &rarr;" data-fr="Voir le site du projet &rarr;"></span>
+                            <span data-en="Visit Research Website &rarr;"
+                                data-fr="Voir le site du projet &rarr;"></span>
                             <i class="fa-solid fa-link text-slate-600" title="External Link"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- CARD 2: Master's Thesis -->
-                <div onclick="openModal('masters-thesis')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
-                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden flex items-center justify-center">
-                        <img src="assets/robot_grasp_focus.jpg" alt="Robot Learning" class="h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden absolute inset-0 items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                <div onclick="openModal('masters-thesis')"
+                    class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="aspect-video w-full bg-slate-950 relative overflow-hidden flex items-center justify-center">
+                        <img src="assets/robot_grasp_focus.jpg" alt="Robot Learning"
+                            class="h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div
+                            class="hidden absolute inset-0 items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-robot text-4xl"></i>
                         </div>
                         <!-- Institution Badge -->
-                        <div class="absolute top-3 right-3 bg-purple-800 text-white text-[10px] font-bold px-2 py-1 rounded">Tohoku University</div>
+                        <div
+                            class="absolute top-3 right-3 bg-purple-800 text-white text-[10px] font-bold px-2 py-1 rounded">
+                            Tohoku University</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
                             <!-- Harmonized Eyebrow: [Project Type] • [Field] -->
-                            <span class="text-xs text-emerald-400 font-semibold" data-en="Master's Thesis • Robot Learning" data-fr="Thèse de Master • Apprentissage Robotique"></span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mt-1" data-en="Robot Learning with Vision & Touch" data-fr="Apprentissage Robotique Visuo-Tactile"></h4>
+                            <span class="text-xs text-blue-400 font-semibold"
+                                data-en="Master's Thesis • Robot Learning"
+                                data-fr="Thèse de Master • Apprentissage Robotique"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors mt-1"
+                                data-en="Robot Learning with Vision & Touch"
+                                data-fr="Apprentissage Robotique Visuo-Tactile"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-3"
-                               data-en="Autonomous soft tube insertion via behavior cloning on a Franka FR3 arm & custom GelSight optical-tactile sensors."
-                               data-fr="Insertion autonome de tube flexible par apprentissage par imitation sur bras Franka FR3 et capteurs tactiles GelSight.">
+                                data-en="Autonomous soft tube insertion via behavior cloning on a Franka FR3 arm & custom GelSight optical-tactile sensors."
+                                data-fr="Insertion autonome de tube flexible par apprentissage par imitation sur bras Franka FR3 et capteurs tactiles GelSight.">
                             </p>
                         </div>
                         <div class="text-xs text-slate-500 font-semibold mt-4 flex items-center justify-between">
-                            <span data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></span>
+                            <span data-en="View Technical Showcase &rarr;"
+                                data-fr="Voir la démonstration &rarr;"></span>
                             <i class="fa-solid fa-paperclip text-slate-600" title="Includes PDF Download"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- CARD 3: INSA Lyon Ultrasound -->
-                <div onclick="openModal('ultrasound')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-amber-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                <div onclick="openModal('ultrasound')"
+                    class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-amber-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
-                        <img src="assets/fantomes.jpg" alt="Processed volumes of the phantom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/fantomes.jpg" alt="Processed volumes of the phantom"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div
+                            class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-wave-square text-4xl"></i>
                         </div>
                         <!-- Institution Badge -->
-                        <div class="absolute top-3 right-3 bg-rose-700 text-white text-[10px] font-bold px-2 py-1 rounded">INSA Lyon</div>
+                        <div
+                            class="absolute top-3 right-3 bg-rose-700 text-white text-[10px] font-bold px-2 py-1 rounded">
+                            INSA Lyon</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-amber-400 font-semibold" data-en="Engineering Internship • Biomedical" data-fr="Stage d'Ingénieur • Génie Biomédical"></span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mt-1" data-en="3D Ultrasound Reconstruction" data-fr="Reconstruction Échographique 3D"></h4>
+                            <span class="text-xs text-amber-400 font-semibold"
+                                data-en="Engineering Internship • Biomedical"
+                                data-fr="Stage d'Ingénieur • Génie Biomédical"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mt-1"
+                                data-en="3D Ultrasound Reconstruction" data-fr="Reconstruction Échographique 3D"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-3"
-                               data-en="Integrating electromagnetic trakSTAR spatial trackers with raw ultrasound captures to construct volumetric representations."
-                               data-fr="Synchronisation d'un capteur électromagnétique trakSTAR avec un échographe pour la reconstruction volumique 3D.">
+                                data-en="Integrating electromagnetic trakSTAR spatial trackers with raw ultrasound captures to construct volumetric representations."
+                                data-fr="Synchronisation d'un capteur électromagnétique trakSTAR avec un échographe pour la reconstruction volumique 3D.">
                             </p>
                         </div>
                         <div class="text-xs text-slate-500 font-semibold mt-4 flex items-center justify-between">
-                            <span data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></span>
+                            <span data-en="View Technical Showcase &rarr;"
+                                data-fr="Voir la démonstration &rarr;"></span>
                             <i class="fa-solid fa-paperclip text-slate-600" title="Includes PDF Download"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- CARD 4: Air Force Base Audit -->
-                <div onclick="openModal('energy-audit')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-red-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                <div onclick="openModal('energy-audit')"
+                    class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-red-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
-                        <img src="assets/server_stock.jpg" alt="Illustration of a server room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/server_stock.jpg" alt="Illustration of a server room"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div
+                            class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-fire text-4xl"></i>
                         </div>
                         <!-- Institution Badge -->
-                        <div class="absolute top-3 right-3 bg-red-900 text-white text-[10px] font-bold px-2 py-1 rounded">Centrale Lyon / Armée de l'Air</div>
+                        <div
+                            class="absolute top-3 right-3 bg-red-900 text-white text-[10px] font-bold px-2 py-1 rounded">
+                            Centrale Lyon / Armée de l'Air</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-red-400 font-semibold" data-en="Industrial Project • Energy Systems" data-fr="Projet Industriel • Thermodynamique"></span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-red-400 transition-colors mt-1" data-en="Base 942 Energy Audit" data-fr="Audit Thermique - Base 942"></h4>
+                            <span class="text-xs text-red-400 font-semibold"
+                                data-en="Industrial Project • Energy Systems"
+                                data-fr="Projet Industriel • Thermodynamique"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-red-400 transition-colors mt-1"
+                                data-en="Base 942 Energy Audit" data-fr="Audit Thermique - Base 942"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-3"
-                               data-en="Full modeling of waste heat recovery (1.25 MW) from operational server facilities for regional infrastructure heating loops."
-                               data-fr="Modélisation complète de la récupération de chaleur fatale (1,25 MW) des serveurs pour le chauffage du site.">
+                                data-en="Full modeling of waste heat recovery (1.25 MW) from operational server facilities for regional infrastructure heating loops."
+                                data-fr="Modélisation complète de la récupération de chaleur fatale (1,25 MW) des serveurs pour le chauffage du site.">
                             </p>
                         </div>
                         <div class="text-xs text-slate-500 font-semibold mt-4 flex items-center justify-between">
-                            <span data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></span>
+                            <span data-en="View Technical Showcase &rarr;"
+                                data-fr="Voir la démonstration &rarr;"></span>
                             <i class="fa-solid fa-paperclip text-slate-600" title="Includes PDF Download"></i>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- CARD 5: Autonomous Drone -->
-                <div onclick="openModal('autonomous-drone')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-purple-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                <div onclick="openModal('autonomous-drone')"
+                    class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-purple-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
-                        <img src="assets/drone_blur.png" alt="Photo of the drone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                        <img src="assets/drone_blur.png" alt="Photo of the drone"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div
+                            class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-helicopter text-4xl"></i>
                         </div>
                         <!-- Institution Badge -->
-                        <div class="absolute top-3 right-3 bg-red-900 text-white text-[10px] font-bold px-2 py-1 rounded">Centrale Lyon</div>
+                        <div
+                            class="absolute top-3 right-3 bg-red-900 text-white text-[10px] font-bold px-2 py-1 rounded">
+                            Centrale Lyon</div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-purple-400 font-semibold" data-en="Engineering Project • Systems & Control" data-fr="Projet d'Ingénieur • Automatique & Contrôle"></span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mt-1" data-en="Autonomous Flight Control" data-fr="Contrôle de Vol Autonome"></h4>
+                            <span class="text-xs text-purple-400 font-semibold"
+                                data-en="Engineering Project • Systems & Control"
+                                data-fr="Projet d'Ingénieur • Automatique & Contrôle"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mt-1"
+                                data-en="Autonomous Flight Control" data-fr="Contrôle de Vol Autonome"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-3"
-                               data-en="Real-time object tracking and centering loops on a custom drone system using PID optimization loops."
-                               data-fr="Détection et centrage d'objets en temps réel sur drone physique via boucle de régulation PID.">
+                                data-en="Real-time object tracking and centering loops on a custom drone system using PID optimization loops."
+                                data-fr="Détection et centrage d'objets en temps réel sur drone physique via boucle de régulation PID.">
                             </p>
                         </div>
                         <div class="text-xs text-slate-500 font-semibold mt-4 flex items-center justify-between">
-                            <span data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></span>
+                            <span data-en="View Technical Showcase &rarr;"
+                                data-fr="Voir la démonstration &rarr;"></span>
                             <i class="fa-solid fa-paperclip text-slate-600" title="Includes PDF Download"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- CARD 6: Twitch Broadcast & Stream -->
-                <div onclick="openModal('twitch-stream')" class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-violet-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
-                    <div class="aspect-video w-full bg-slate-950 relative overflow-hidden p-5 flex items-center justify-center">
-                        <img src="assets/echallenge_final_noir_png.png" alt="Logo EChallenge" class="w-full h-full rounded-lg object-contain group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
+                <div onclick="openModal('twitch-stream')"
+                    class="cursor-pointer group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-[#01ffff]/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="aspect-video w-full bg-slate-950 relative overflow-hidden p-5 flex items-center justify-center">
+                        <img src="assets/echallenge_final_noir_png.png" alt="Logo EChallenge"
+                            class="w-full h-full rounded-lg object-contain group-hover:scale-105 transition-transform duration-300"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div
+                            class="hidden absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-105 transition-transform duration-300">
                             <i class="fa-solid fa-tower-broadcast text-4xl"></i>
                         </div>
                         <!-- Institution Badge -->
-                        <div class="absolute top-3 right-3 bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-md">Centrale Lyon / Associatif</div>
+                        <div
+                            class="absolute top-3 right-3 bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-md">
+                            Centrale Lyon / Associatif</div>
 
                     </div>
                     <div class="p-5 flex flex-col flex-grow justify-between">
                         <div>
-                            <span class="text-xs text-violet-400 font-semibold" data-en="Extracurricular • Systems & AV" data-fr="Engagement Associatif • Ingénierie AV & Live"></span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors mt-1" data-en="Live Broadcast Systems" data-fr="Gestion de Régie & Streaming Live"></h4>
+                            <span class="text-xs font-semibold" style="color: #01ffff;" data-en="Extracurricular • Systems & AV"
+                                data-fr="Engagement Associatif • Ingénierie AV & Live"></span>
+                            <h4 class="text-lg font-bold text-white group-hover:text-[#01ffff] transition-colors mt-1"
+                                data-en="Live Broadcast Systems" data-fr="Gestion de Régie & Streaming Live"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-3"
-                               data-en="Coordinating multi-camera live feeds, capture cards, and high-stress technical engineering setups for esports events."
-                               data-fr="Supervision de régies multi-caméras, cartes d'acquisition et flux direct sous OBS pour événements esport.">
+                                data-en="Coordinating multi-camera live feeds, capture cards, and high-stress technical engineering setups for esports events."
+                                data-fr="Supervision de régies multi-caméras, cartes d'acquisition et flux direct sous OBS pour événements esport.">
                             </p>
                         </div>
-                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;" data-fr="Voir la démonstration &rarr;"></div>
+                        <div class="text-xs text-slate-500 font-semibold mt-4" data-en="View Technical Showcase &rarr;"
+                            data-fr="Voir la démonstration &rarr;"></div>
                     </div>
                 </div>
 
@@ -247,36 +314,40 @@
     </footer>
 
     <!-- INTERACTIVE DETAIL MODAL OVERLAY -->
-    <div id="projectModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none modal-transition p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 modal-transition">
-            
+    <div id="projectModal"
+        class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none modal-transition p-4">
+        <div
+            class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 modal-transition">
+
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors z-20 backdrop-blur">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors z-20 backdrop-blur">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Media Container (Supports Video, Images, or Interactive Embeds) -->
-            <div id="modalMediaContainer" class="w-full aspect-video bg-slate-950 rounded-t-2xl relative flex items-center justify-center text-slate-600 border-b border-slate-800 overflow-hidden">
+            <!-- Hero Media Container (Top Cover Visual) -->
+            <div id="modalMediaContainer"
+                class="w-full aspect-video bg-slate-950 rounded-t-2xl relative flex items-center justify-center text-slate-600 border-b border-slate-800 overflow-hidden">
                 <i class="fa-solid fa-play text-6xl"></i>
             </div>
 
-            <!-- Text & Action Controls Container -->
-            <div class="p-8">
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                    <span id="modalCategory" class="text-xs font-bold uppercase tracking-wider text-blue-400">Category</span>
+            <!-- Dynamic Rich Content Container -->
+            <div class="p-6 md:p-8">
+                <!-- Header Metadata Row -->
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4 mb-6">
+                    <div>
+                        <span id="modalCategory"
+                            class="text-xs font-bold uppercase tracking-wider text-blue-400">Category</span>
+                        <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-1">Project Title</h3>
+                    </div>
                     <!-- Action / Download Buttons Container -->
-                    <div id="modalButtonContainer" class="flex items-center gap-2"></div>
+                    <div id="modalButtonContainer" class="flex flex-wrap items-center gap-2"></div>
                 </div>
 
-                <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-1">Project Title</h3>
-                
-                <p id="modalDescription" class="text-slate-300 mt-4 leading-relaxed">Detailed project description goes here.</p>
-
-                <!-- Technical highlights list -->
-                <div class="mt-6 border-t border-slate-800 pt-6">
-                    <h4 id="highlightsHeader" class="text-sm font-bold text-white uppercase tracking-wider mb-3" data-en="Technical Highlights" data-fr="Points Clés Techniques">Points Clés Techniques</h4>
-                    <ul id="modalHighlights" class="space-y-2.5 text-sm text-slate-300">
-                    </ul>
+                <!-- Flexible Multi-Paragraph & Multi-Media Body -->
+                <div id="modalDynamicBody"
+                    class="prose prose-invert max-w-none text-slate-300 space-y-6 text-sm md:text-base leading-relaxed">
+                    <!-- Dynamic narrative blocks, images, code callouts & videos injected here -->
                 </div>
             </div>
 
@@ -289,161 +360,279 @@
 
         const projectData = {
             'masters-thesis': {
+                categoryClass: 'text-blue-400',
+                heroMediaHtml: `<video class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="assets/thesis_demo.mp4" onerror="this.parentElement.innerHTML='<img src=\\'assets/robot_grasp_focus.jpg\\' class=\\'w-full h-full object-cover rounded-t-2xl\\'>'"></video>`,
                 fr: {
                     title: 'Apprentissage Robotique par Vision & Toucher',
                     category: "Thèse de Master — Université de Tohoku",
-                    description: 'Cette recherche combine le suivi d’un téléopérateur humain avec un retour haptique pour enseigner à un bras manipulateur Franka FR3 l’insertion autonome de tubes flexibles deformables dans des compartiments restreints.',
-                    highlights: [
-                        'Co-auteur de la publication <strong>ViHaTeleop</strong> acceptée à <strong>IROS 2026</strong>.',
-                        'Conception du re-ciblage main-bras temps réel optimisant les flux de coordonnées multi-doigts avec retour haptique.',
-                        'Entraînement d’une politique d’<strong>Apprentissage par Imitation (Behavior Cloning)</strong> sur plus de 300 trajectoires.',
-                        'Intégration de capteurs opto-tactiles <strong>GelSight</strong> et caméras RealSense.'
-                    ],
-                    buttonHtml: `<a href="assets/thesis20260721.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Télécharger le Mémoire (PDF)
-                    </a>`
+                    buttonHtml: `<a href="assets/thesis20260721.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Mémoire Complet (PDF)
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Cette recherche s'attaque au problème complexe de la manipulation d'objets hautement déformables. L'objectif principal était de permettre à un bras robotique <strong>Franka Emika FR3</strong> d'insérer de manière autonome des tubes flexibles mous dans des réceptacles étroits.
+                        </p>
+                        
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Architecture Matérielle & Capteurs</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Bras Robotique :</strong> Franka FR3 (7-DOF)</li>
+                                <li>• <strong>Main Préhensile :</strong> Main dextre LEAP Hand (16-DOF)</li>
+                                <li>• <strong>Vision :</strong> Duales Intel RealSense D435i</li>
+                                <li>• <strong>Tactile :</strong> Capteurs opto-tactiles GelSight sur-mesure</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-slate-300">
+                            Pour collecter un jeu de données de haute qualité sans passer par des téléopérateurs industriels rigides, nous avons développé un système de téléopération visuo-haptique en temps réel. Le système ré-associe la posture de la main humaine capturée par suivi optique vers les articulations de la main LEAP.
+                        </p>
+
+                        <!-- Secondary Inline Image with Caption -->
+                        <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
+                            <img src="assets/ViHaTeleop egg blur.jpg" alt="Téléopération et retour haptique" class="w-full h-48 md:h-64 object-cover rounded-lg">
+                            <figcaption class="text-xs text-slate-400 text-center mt-2 italic">
+                                Fig 1. Dispositif de téléopération visuo-haptique avec re-ciblage kinématique temps réel et retour tactile GelSight.
+                            </figcaption>
+                        </figure>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Politique d'Apprentissage par Imitation (Behavior Cloning)</h4>
+                        <p class="text-slate-300">
+                            À partir de plus de 300 démonstrations enregistrées, une politique d'apprentissage multimodal basée sur PyTorch combine les caractéristiques visuelles de la caméra et la carte de déformation tactile des capteurs GelSight pour réguler les mouvements fins d'insertion.
+                        </p>
+
+                        <!-- Key Research Highlights List -->
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Résultats Marquants</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Article scientifique co-auteur accepté à la conférence internationale <strong>IROS 2026</strong>.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Taux de succès d'insertion autonome supérieur à 88% sur matériaux déformables non rigides.</span></li>
+                            </ul>
+                        </div>
+                    `
                 },
                 en: {
                     title: 'Robot Learning with Vision & Touch',
                     category: "Master's Thesis — Tohoku University",
-                    description: 'This research combined advanced hand-arm teleoperation tracking with tactile feedback to teach a Franka FR3 manipulator arm to autonomously insert soft deformable tubes into restricted compartments.',
-                    highlights: [
-                        'Co-authored the <strong>ViHaTeleop</strong> research paper accepted at <strong>IROS 2026</strong>.',
-                        'Engineered real-time hand-arm retargeting optimizing high-DOF coordinate streams with haptic feedback.',
-                        'Trained an end-to-end <strong>Behavior Cloning</strong> policy model on a dataset of over 300 successful trajectories.',
-                        'Integrated multi-axis optical-tactile <strong>GelSight</strong> sensors alongside RealSense cameras.'
-                    ],
-                    buttonHtml: `<a href="assets/thesis20260721.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Download Master's Thesis (PDF)
-                    </a>`
-                },
-                mediaHtml: `<video id="thesisVideo" class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="assets/thesis_demo.mp4" onerror="this.src='https://github.com/user-attachments/assets/fe719290-7a36-4999-a4d1-25fd29fce894'"></video>`
+                    buttonHtml: `<a href="assets/thesis20260721.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Full Thesis (PDF)
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            This research addresses the challenge of autonomous manipulation for highly deformable objects. The primary objective was enabling a <strong>Franka Emika FR3</strong> robotic arm to autonomously insert soft, deformable tubes into tight compartments.
+                        </p>
+                        
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Hardware & Sensor Stack</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Robotic Arm:</strong> Franka FR3 (7-DOF)</li>
+                                <li>• <strong>Gripper:</strong> 16-DOF LEAP Dexterous Hand</li>
+                                <li>• <strong>Vision:</strong> Dual Intel RealSense D435i</li>
+                                <li>• <strong>Tactile:</strong> Custom GelSight Optical-Tactile Fingerpads</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-slate-300">
+                            To gather a rich dataset of demonstrations, we engineered a real-time visual-haptic teleoperation setup that maps human hand joint angles directly onto the 16-DOF LEAP hand with haptic force feedback.
+                        </p>
+
+                        <!-- Secondary Inline Image with Caption -->
+                        <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
+                            <img src="assets/ViHaTeleop egg blur.jpg" alt="Teleoperation setup" class="w-full h-48 md:h-64 object-cover rounded-lg">
+                            <figcaption class="text-xs text-slate-400 text-center mt-2 italic">
+                                Fig 1. Visual-haptic teleoperation pipeline featuring real-time kinematic retargeting and tactile feedback.
+                            </figcaption>
+                        </figure>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Behavior Cloning Policy Training</h4>
+                        <p class="text-slate-300">
+                            Using over 300 collected trajectories, a PyTorch multimodal behavior cloning architecture combines camera visual features and GelSight tactile deformation maps to generate continuous low-level velocity commands.
+                        </p>
+
+                        <!-- Key Research Highlights List -->
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Milestones</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Co-authored research paper accepted at <strong>IROS 2026</strong>.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Achieved 88%+ autonomous insertion success rate on uncalibrated soft tubes.</span></li>
+                            </ul>
+                        </div>
+                    `
+                }
             },
             'autonomous-drone': {
+                categoryClass: 'text-purple-400',
+                heroMediaHtml: `<div class="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
+                    <img src="assets/drone_blur.png" class="w-full h-full object-cover opacity-80 rounded-t-2xl">
+                </div>`,
                 fr: {
                     title: 'Contrôle de Vol de Drone Autonome',
                     category: 'Projet d’Ingénieur — Centrale Lyon',
-                    description: 'Conception et déploiement d’une suite logicielle régulant un drone physique évoluant en environnement sans GPS.',
-                    highlights: [
-                        'Implémentation de régulateurs PID temps discret pour l’altitude, le tangage et le roulis.',
-                        'Couplage avec le détecteur d’objets YOLO pour calculer le centrage par rapport à la cible.',
-                        'Interfaçage des protocoles de communication matériels sous boucle temps réel.'
-                    ],
-                    buttonHtml: `<a href="assets/Rapport_Final_PE80.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Télécharger le Rapport de Projet (PDF)
-                    </a>`
+                    buttonHtml: `<a href="assets/Rapport_Final_PE80.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Rapport PDF
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Développement d'un drone quadrirotor autonome opérant sans signal GPS. La mission consistait à détecter une cible visuelle, s'aligner automatiquement au-dessus d'elle et stabiliser le vol stationnaire en temps réel.
+                        </p>
+                        
+                        <h4 class="text-md font-bold text-white mt-4 mb-2">Boucle de Contrôle PID & Vision YOLO</h4>
+                        <p class="text-slate-300">
+                            L'architecture logicielle embarquée traite un flux vidéo via le réseau de détection <strong>YOLO</strong> pour calculer le vecteur d'erreur entre le centre de l'image et le centroïde de l'objet. Ce signal d'erreur alimente des régulateurs PID discrets contrôlant le pitch, le roll et le yaw.
+                        </p>
+
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Réalisations Techniques</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Asservissement visuel temps réel avec latence inférieure à 40ms.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Développement du protocole de communication série/UDP avec le contrôleur de vol.</span></li>
+                            </ul>
+                        </div>
+                    `
                 },
                 en: {
                     title: 'Autonomous Drone Flight Control',
                     category: 'Engineering Project — Centrale Lyon',
-                    description: 'Designed and deployed an integrated software stack controlling physical drone platforms navigating GPS-denied environments.',
-                    highlights: [
-                        'Built discrete-time PID feedback controllers regulating altitude, pitch, and yaw.',
-                        'Interfaced YOLO deep-learning object detector calculating offsets to target centroids.',
-                        'Managed core communication protocols linking software directly to hardware.'
-                    ],
-                    buttonHtml: `<a href="assets/Rapport_Final_PE80.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Download Project Report (PDF)
-                    </a>`
-                },
-                mediaHtml: `<div class="text-center p-8"><i class="fa-solid fa-helicopter text-5xl mb-4 text-purple-400"></i><p class="text-sm text-slate-400">Drone tracking loop active. Built using local PID controllers.</p></div>`
+                    buttonHtml: `<a href="assets/Rapport_Final_PE80.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Project Report (PDF)
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Engineered an autonomous quadcopter operating in GPS-denied environments. The system detects ground targets, automatically aligns its trajectory, and maintains steady hover positioning.
+                        </p>
+                        
+                        <h4 class="text-md font-bold text-white mt-4 mb-2">PID Control & YOLO Vision Feed</h4>
+                        <p class="text-slate-300">
+                            An onboard vision pipeline feeds target bounding box offsets from a <strong>YOLO</strong> detector into discrete-time PID control loops adjusting pitch, roll, and yaw angles dynamically.
+                        </p>
+
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Technical Highlights</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Real-time visual servoing loop with under 40ms end-to-end latency.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Robust embedded serial/UDP communication interface with flight hardware.</span></li>
+                            </ul>
+                        </div>
+                    `
+                }
             },
             'ultrasound': {
+                categoryClass: 'text-amber-400',
+                heroMediaHtml: `<div class="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
+                    <img src="assets/fantomes.jpg" class="w-full h-full object-cover">
+                </div>`,
                 fr: {
                     title: 'Reconstruction Échographique 3D',
                     category: 'Stage d’Ingénieur — INSA Lyon / Labo Ampère',
-                    description: 'Développement sous MATLAB d’une solution de reconstruction volumique synchronisant le flux d’un échographe avec un capteur électromagnétique.',
-                    highlights: [
-                        'Synchronisation matérielle haute fréquence entre flux vidéo 2D et capteur 3D trakSTAR.',
-                        'Implémentation d’algorithmes d’interpolation et de traitement de nuages de voxels.',
-                        'Étalonnage de la matrice de transformation entre le repère capteur et l’image échographique.'
-                    ],
-                    buttonHtml: `<a href="assets/MAESTRE_Rapport_Stage_INSA.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Télécharger le Rapport de Stage (PDF)
-                    </a>`
+                    buttonHtml: `<a href="assets/MAESTRE_Rapport_Stage_INSA.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Rapport de Stage (PDF)
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Conception d'une chaîne de traitement sous <strong>MATLAB</strong> permettant de reconstruire des volumes 3D d'organes ou de fantômes à partir d'une sonde échographique 2D manipulée à la main ("freehand ultrasound").
+                        </p>
+                        <p class="text-slate-300 mt-3">
+                            Chaque image 2D est couplée en temps réel avec la position et l'orientation spatiales fournies par un capteur électromagnétique <strong>trakSTAR</strong>. Un algorithme d'interpolation voxelique reconstitue ensuite le volume 3D complet.
+                        </p>
+                    `
                 },
                 en: {
                     title: '3D Freehand Ultrasound Reconstruction',
                     category: 'Engineering Internship — INSA Lyon / Ampère Lab',
-                    description: 'Designed an automated volumetric imaging suite utilizing MATLAB to capture 2D frame sequences paired with spatial tracking.',
-                    highlights: [
-                        'Created high-frequency hardware synchronization loops integrating physical ultrasound feeds with tracking.',
-                        'Developed custom spatial binning and interpolation routines in MATLAB.',
-                        'Established calibration processes linking tracker matrices to coordinates.'
-                    ],
-                    buttonHtml: `<a href="assets/MAESTRE_Rapport_Stage_INSA.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Download Internship Report (PDF)
-                    </a>`
-                },
-                mediaHtml: `<div class="text-center p-8"><i class="fa-solid fa-wave-square text-5xl mb-4 text-amber-400"></i><p class="text-sm text-slate-400">Volumetric reconstruction suite operating via trakSTAR sensors.</p></div>`
+                    buttonHtml: `<a href="assets/MAESTRE_Rapport_Stage_INSA.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Internship Report (PDF)
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Developed a volumetric ultrasound processing pipeline in <strong>MATLAB</strong> that reconstructs 3D spatial volumes from standard 2D hand-held ultrasound probes.
+                        </p>
+                        <p class="text-slate-300 mt-3">
+                            2D frames are hardware-synchronized with 6-DOF pose streams from a <strong>trakSTAR</strong> electromagnetic tracking sensor, followed by spatial voxel interpolation algorithms.
+                        </p>
+                    `
+                }
             },
             'energy-audit': {
+                categoryClass: 'text-red-400',
+                heroMediaHtml: `<div class="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
+                    <img src="assets/server_stock.jpg" class="w-full h-full object-cover">
+                </div>`,
                 fr: {
                     title: 'Audit Thermodynamique — Base Aérienne 942',
                     category: 'Projet Industriel — Centrale Lyon / Armée de l’Air',
-                    description: 'Audit et modélisation de la récupération de chaleur fatale (1.25 MW) provenant des serveurs informatiques de la base.',
-                    highlights: [
-                        'Modélisation de 1.25 MW de potentiel thermique récupérable.',
-                        'Proposition de solutions intégrant pompes à chaleur industrielles et réseaux de chaleur.',
-                        'Étude de faisabilité pour le chauffage des infrastructures et bassins de la base.'
-                    ],
-                    buttonHtml: `<a href="assets/Rapport_fin-de-projet_PAi02.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Télécharger le Rapport de Stage (PDF)
-                    </a>`
+                    buttonHtml: `<a href="assets/Rapport_fin-de-projet_PAi02.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Rapport d'Audit (PDF)
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Réalisation d'un audit énergétique complet sur la Base Aérienne 942 pour valoriser la chaleur fatale produite par le centre de calcul et les serveurs informatiques.
+                        </p>
+                        <p class="text-slate-300 mt-3">
+                            Modélisation thermodynamique démontrant un potentiel de <strong>1,25 MW</strong> de chaleur récupérable et proposition de boucles de transfert thermique vers le chauffage du site.
+                        </p>
+                    `
                 },
                 en: {
                     title: 'Air Force Base 942 Thermodynamic Audit',
                     category: 'Industrial Partnership — French Air Force',
-                    description: 'Analyzed thermal cooling systems on a defense installation, quantifying recoverable server waste heat.',
-                    highlights: [
-                        'Calculated 1.25 MW of recoverable heat waste from server clusters.',
-                        'Engineered solution models integrating heavy industrial heat pumps.',
-                        'Designed thermal network routing to heat base infrastructure.'
-                    ],
-                    buttonHtml: `<a href="assets/Rapport_fin-de-projet_PAi02.pdf" download target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Download Internship Report (PDF)
-                    </a>`
-                },
-                mediaHtml: `<div class="text-center p-8"><i class="fa-solid fa-fire text-5xl mb-4 text-red-500"></i><p class="text-sm text-slate-400">Calculated Thermodynamic waste flow: 1.25 MW continuous potential.</p></div>`
+                    buttonHtml: `<a href="assets/Rapport_fin-de-projet_PAi02.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i> Audit Report (PDF)
+                    </a>`,
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Executed a full thermodynamic audit of Air Force Base 942 server installations to recover industrial waste heat.
+                        </p>
+                        <p class="text-slate-300 mt-3">
+                            Quantified a continuous potential of <strong>1.25 MW</strong> waste heat and designed energy routing loops integrating industrial heat pumps.
+                        </p>
+                    `
+                }
             },
             'twitch-stream': {
+                categoryClass: 'text-[#01ffff]',
+                heroMediaHtml: `<div class="w-full h-full bg-slate-950 flex items-center justify-center p-6">
+                    <img src="assets/echallenge_final_noir_png.png" class="max-h-full object-contain">
+                </div>`,
                 fr: {
                     title: 'Gestion de Production & Streaming Live',
                     category: 'Engagement Associatif & Technique',
-                    description: 'Supervision technique de régie vidéo en direct pour des événements esport étudiants sur Twitch.',
-                    highlights: [
-                        'Configuration de régies multi-caméras, cartes d’acquisition et micros sous OBS Studio.',
-                        'Programmation de scènes, overlays et transitions dynamiques.',
-                        'Diffusion en direct auprès de plus de 2 000 spectateurs uniques.'
-                    ],
-                    buttonHtml: ''
+                    buttonHtml: '',
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Direction technique de régie vidéo en direct pour les tournois esport de Centrale Lyon diffusés sur Twitch.
+                        </p>
+                        <p class="text-slate-300 mt-3">
+                            Gestion des flux vidéo multi-caméras, cartes d'acquisition, overlays réactifs et dépannage réseau à chaud pour des audiences de plus de 2 000 spectateurs uniques.
+                        </p>
+                    `
                 },
                 en: {
                     title: 'Live Audiovisual Streaming Systems',
                     category: 'Technical Leadership — Esports',
-                    description: 'Engineered high-definition live broadcasting platforms managing multiple local inputs and OBS pipelines.',
-                    highlights: [
-                        'Assembled hardware setups linking multi-camera inputs and capture cards under OBS.',
-                        'Programmed dynamic scenes, overlays, and transition states.',
-                        'Spearheaded production pipelines generating live coverage to over 2,000 unique viewers.'
-                    ],
-                    buttonHtml: ''
-                },
-                mediaHtml: `<div class="text-center p-8"><i class="fa-solid fa-tower-broadcast text-5xl mb-4 text-violet-400"></i><p class="text-sm text-slate-400">Managed technical production for competitive tournaments over Twitch.</p></div>`
+                    buttonHtml: '',
+                    bodyHtml: `
+                        <p class="text-slate-300">
+                            Technical lead for live esport tournament broadcasts hosted on Twitch for Centrale Lyon.
+                        </p>
+                        <p class="text-slate-300 mt-3">
+                            Configured multi-camera capture inputs, live OBS overlays, and audio mixing tables under strict timing constraints for over 2,000 unique online viewers.
+                        </p>
+                    `
+                }
             }
         };
 
         const modal = document.getElementById('projectModal');
-        const modalContainer = modal.querySelector('.max-w-2xl');
+        const modalContainer = modal.querySelector('.max-w-3xl');
         const mediaContainer = document.getElementById('modalMediaContainer');
         const categoryLabel = document.getElementById('modalCategory');
         const titleLabel = document.getElementById('modalTitle');
-        const descLabel = document.getElementById('modalDescription');
-        const highlightsList = document.getElementById('modalHighlights');
+        const dynamicBody = document.getElementById('modalDynamicBody');
         const buttonContainer = document.getElementById('modalButtonContainer');
         let currentOpenProjectId = null;
 
-        // Apply language across all elements dynamically
+        // Apply language across all static elements dynamically
         function updateDOM() {
             document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
                 el.innerHTML = el.getAttribute('data-' + currentLang);
@@ -451,39 +640,32 @@
             document.getElementById('langToggleLabel').textContent = currentLang.toUpperCase() + ' | ' + (currentLang === 'fr' ? 'EN' : 'FR');
         }
 
-        // Language Switcher Function
-        function toggleLanguage() {
-            currentLang = currentLang === 'fr' ? 'en' : 'fr';
-            updateDOM();
-
-            // If modal is currently open, update its content dynamically
-            if (currentOpenProjectId) {
-                renderModalContent(currentOpenProjectId);
-            }
-        }
-
         function renderModalContent(projectId) {
             const data = projectData[projectId];
             if (!data) return;
             const langData = data[currentLang] || data['fr'];
 
-            mediaContainer.innerHTML = data.mediaHtml;
+            mediaContainer.innerHTML = data.heroMediaHtml || '';
             categoryLabel.textContent = langData.category;
+            categoryLabel.className = `text-xs font-bold uppercase tracking-wider ${data.categoryClass || 'text-blue-400'}`;
             titleLabel.textContent = langData.title;
-            descLabel.textContent = langData.description;
             buttonContainer.innerHTML = langData.buttonHtml || '';
-            
-            highlightsList.innerHTML = langData.highlights.map(pt => `
-                <li class="flex items-start gap-2.5">
-                    <span class="text-blue-500 mt-1 text-xs"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span>${pt}</span>
-                </li>
-            `).join('');
+            dynamicBody.innerHTML = langData.bodyHtml || '';
 
-            // Automatically speed up video playback rate in web browser (1.35x speed)
+            // Automatically speed up video playback rate in web browser (1.5x speed)
             const activeVideo = mediaContainer.querySelector('video');
             if (activeVideo) {
-                activeVideo.playbackRate = 1.35;
+                activeVideo.playbackRate = 1.5;
+            }
+        }
+
+        // Language Switcher Function
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            updateDOM();
+
+            if (currentOpenProjectId) {
+                renderModalContent(currentOpenProjectId);
             }
         }
 
@@ -503,19 +685,19 @@
             modalContainer.classList.add('scale-95');
             document.body.style.overflow = '';
             currentOpenProjectId = null;
-            
+
             const activeVideo = mediaContainer.querySelector('video');
             if (activeVideo) activeVideo.pause();
         }
 
-        modal.addEventListener('click', function(e) {
+        modal.addEventListener('click', function (e) {
             if (e.target === modal) closeModal();
         });
 
-        // Initialize DOM text content on page load from single source of truth
         window.addEventListener('DOMContentLoaded', () => {
             updateDOM();
         });
     </script>
 </body>
+
 </html>
