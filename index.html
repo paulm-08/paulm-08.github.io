@@ -88,7 +88,7 @@
                     class="group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
                         <!-- <img src="assets/vihateleop_sys_overview.png" alt="Overview of the ViHaTeleop system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"> -->
-                        <img src="assets/ViHaTeleop egg blur.jpg" alt="Overview of the ViHaTeleop system"
+                        <img src="assets/ViHaTeleop_egg_blur.jpg" alt="Overview of the ViHaTeleop system"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div
@@ -155,7 +155,10 @@
                         <div class="text-xs text-slate-500 font-semibold mt-4 flex items-center justify-between">
                             <span data-en="View Technical Showcase &rarr;"
                                 data-fr="Voir la démonstration &rarr;"></span>
+                            <div class="flex items-center gap-2">
                             <i class="fa-solid fa-paperclip text-slate-600" title="Includes PDF Download"></i>
+                            <i class="fa-solid fa-play-circle text-slate-600" title="Includes video content"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -361,7 +364,10 @@
         const projectData = {
             'masters-thesis': {
                 categoryClass: 'text-blue-400',
-                heroMediaHtml: `<video class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="assets/thesis_demo.mp4" onerror="this.parentElement.innerHTML='<img src=\\'assets/robot_grasp_focus.jpg\\' class=\\'w-full h-full object-cover rounded-t-2xl\\'>'"></video>`,
+                // heroMediaHtml: `<video class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="assets/thesis_demo.mp4" onerror="this.parentElement.innerHTML='<img src=\\'assets/robot_grasp_focus.jpg\\' class=\\'w-full h-full object-cover rounded-t-2xl\\'>'"></video>`,
+                heroMediaHtml: `<div class="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
+                    <img src="assets/robot_grasp_focus.jpg" class="w-full h-full object-cover opacity-80 rounded-t-2xl">
+                </div>`,
                 fr: {
                     title: 'Apprentissage Robotique par Vision & Toucher',
                     category: "Thèse de Master — Université de Tohoku",
@@ -370,43 +376,68 @@
                     </a>`,
                     bodyHtml: `
                         <p class="text-slate-300">
-                            Cette recherche s'attaque au problème complexe de la manipulation d'objets hautement déformables. L'objectif principal était de permettre à un bras robotique <strong>Franka Emika FR3</strong> d'insérer de manière autonome des tubes flexibles mous dans des réceptacles étroits.
+                            Cette recherche s'attaque au problème complexe de la manipulation d'objets déformables. L'objectif principal était de permettre à un bras robotique <strong>Franka Emika FR3</strong> d'insérer de manière autonome des tubes flexibles sur des réceptacles étroits.
                         </p>
                         
                         <!-- Technical Highlight Card -->
                         <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
-                            <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Architecture Matérielle & Capteurs</h4>
+                            <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Architecture Matérielle</h4>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
-                                <li>• <strong>Bras Robotique :</strong> Franka FR3 (7-DOF)</li>
-                                <li>• <strong>Main Préhensile :</strong> Main dextre LEAP Hand (16-DOF)</li>
-                                <li>• <strong>Vision :</strong> Duales Intel RealSense D435i</li>
-                                <li>• <strong>Tactile :</strong> Capteurs opto-tactiles GelSight sur-mesure</li>
+                                <li>• <strong>Bras Robotique :</strong> Franka FR3 (7 DDL)</li>
+                                <li>• <strong>Main Préhensile :</strong> Main dextre LEAP Hand (16 DDL)</li>
+                                <li>• <strong>Vision :</strong> 2 caméras RGB-D Intel RealSense (D455 & D435)</li>
+                                <li>• <strong>Tactile :</strong> 3 capteurs opto-tactiles 9DTact.</li>
+                                <li>• <strong>Haptique :</strong> Système de retour haptique par vibration LRA.</li>
                             </ul>
                         </div>
 
                         <p class="text-slate-300">
-                            Pour collecter un jeu de données de haute qualité sans passer par des téléopérateurs industriels rigides, nous avons développé un système de téléopération visuo-haptique en temps réel. Le système ré-associe la posture de la main humaine capturée par suivi optique vers les articulations de la main LEAP.
+                            Pour capturer des démonstrations fidèles au gestes naturels humains, notre équipe au sein du laboratoire a développé <strong>ViHaTeleop</strong>, un système de téléopération visuo-haptique en temps réel. Le système associe la posture de la main humaine aux articulations de la main LEAP et du bras FR3 et fournit un retour haptique à l'opérateur.
                         </p>
 
                         <!-- Secondary Inline Image with Caption -->
                         <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
-                            <img src="assets/ViHaTeleop egg blur.jpg" alt="Téléopération et retour haptique" class="w-full h-48 md:h-64 object-cover rounded-lg">
+                        <!-- The outer container defines a 16:9 box -->
+                        <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-950">
+                            <video class="w-full h-full object-cover" autoplay loop muted playsinline 
+                                src="assets/thesis_demo.mp4" 
+                                onerror="this.parentElement.innerHTML='<img src=&quot;assets/ViHaTeleop_egg_blur.jpg&quot; alt=&quot;Téléopération et retour haptique&quot; class=&quot;w-full h-full object-cover&quot;>'">
+                            </video>
+                            <span class="absolute top-2 right-2 bg-slate-900/80 text-blue-400 text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/60 backdrop-blur pointer-events-none flex items-center gap-1 z-10">
+                                <i class="fa-solid fa-forward text-[9px]"></i> 2.0x
+                            </span>
+                        </div>
                             <figcaption class="text-xs text-slate-400 text-center mt-2 italic">
-                                Fig 1. Dispositif de téléopération visuo-haptique avec re-ciblage kinématique temps réel et retour tactile GelSight.
+                                Grâce au système ViHaTeleop, l'opérateur humain contrôle le bras robotique et collecte des données visuelles et tactiles pour l'apprentissage automatique.
                             </figcaption>
                         </figure>
 
-                        <h4 class="text-md font-bold text-white mt-6 mb-2">Politique d'Apprentissage par Imitation (Behavior Cloning)</h4>
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Apprentissage par Imitation (Behavior Cloning)</h4>
                         <p class="text-slate-300">
-                            À partir de plus de 300 démonstrations enregistrées, une politique d'apprentissage multimodal basée sur PyTorch combine les caractéristiques visuelles de la caméra et la carte de déformation tactile des capteurs GelSight pour réguler les mouvements fins d'insertion.
+                            À partir des 300 démonstrations enregistrées, un modèle d'Intelligence Artificielle basé sur PyTorch est entraîné pour générer une loi de commande autonome. Ce modèle multimodal combine les caractéristiques visuelles de la caméra et la carte de déformation des capteurs tactiles afin de réguler les mouvements fins d'insertion.
                         </p>
+
+                        <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
+                            <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-950">
+                                <video class="w-full h-full object-cover" autoplay loop muted playsinline 
+                                    src="assets/rollout1.mp4" 
+                                    onerror="this.parentElement.innerHTML='<img src=&quot;assets/rollout_frame3.jpg&quot; alt=&quot;Insertion autonome&quot; class=&quot;w-full h-full object-cover&quot;>'">
+                                </video>
+                                <span class="absolute top-2 right-2 bg-slate-900/80 text-blue-400 text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/60 backdrop-blur pointer-events-none flex items-center gap-1 z-10">
+                                    <i class="fa-solid fa-forward text-[9px]"></i> 2.0x
+                                </span>
+                            </div>
+                            <figcaption class="text-xs text-slate-400 text-center mt-2 italic"> Le robot effectue la tâche de manière autonome grâce à l'apprentissage par imitation.
+                            </figcaption>
+                        </figure>
 
                         <!-- Key Research Highlights List -->
                         <div class="mt-6 border-t border-slate-800 pt-4">
                             <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Résultats Marquants</h4>
                             <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Article scientifique co-auteur accepté à la conférence internationale <strong>IROS 2026</strong>.</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Taux de succès d'insertion autonome supérieur à 88% sur matériaux déformables non rigides.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Système de téléopération <strong>ViHaTeleop</strong> validé par un article scientifique co-écrit, accepté à la conférence <strong>IROS 2026</strong>.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Collecte d'un jeu de données de <strong>300 démonstrations</strong> pour l'apprentissage par imitation.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Développement d'un pipeline complet d'apprentissage robotique : collecte de données, extraction des caractéristiques visuelles et tactiles, entraînement du modèle et déploiement.</span></li>
                             </ul>
                         </div>
                     `
@@ -419,43 +450,61 @@
                     </a>`,
                     bodyHtml: `
                         <p class="text-slate-300">
-                            This research addresses the challenge of autonomous manipulation for highly deformable objects. The primary objective was enabling a <strong>Franka Emika FR3</strong> robotic arm to autonomously insert soft, deformable tubes into tight compartments.
+                            This research addresses the challenge of autonomous manipulation for deformable objects. The primary objective was enabling a <strong>Franka Emika FR3</strong> robotic arm to autonomously insert flexible tubes onto narrow target receptacles.
                         </p>
                         
                         <!-- Technical Highlight Card -->
                         <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
-                            <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Hardware & Sensor Stack</h4>
+                            <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Hardware Architecture</h4>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
                                 <li>• <strong>Robotic Arm:</strong> Franka FR3 (7-DOF)</li>
-                                <li>• <strong>Gripper:</strong> 16-DOF LEAP Dexterous Hand</li>
-                                <li>• <strong>Vision:</strong> Dual Intel RealSense D435i</li>
-                                <li>• <strong>Tactile:</strong> Custom GelSight Optical-Tactile Fingerpads</li>
+                                <li>• <strong>End-Effector:</strong> LEAP Dexterous Hand (16-DOF)</li>
+                                <li>• <strong>Vision:</strong> Dual Intel RealSense RGB-D (D455 & D435)</li>
+                                <li>• <strong>Tactile Sensing:</strong> 3x 9DTact opto-tactile sensors</li>
+                                <li>• <strong>Haptics:</strong> LRA vibration haptic feedback system</li>
                             </ul>
                         </div>
 
                         <p class="text-slate-300">
-                            To gather a rich dataset of demonstrations, we engineered a real-time visual-haptic teleoperation setup that maps human hand joint angles directly onto the 16-DOF LEAP hand with haptic force feedback.
+                            To collect natural human demonstration trajectories, our laboratory team developed <strong>ViHaTeleop</strong>, a real-time visual-haptic teleoperation setup. The system dynamically retargets human hand posture to the LEAP hand and Franka robotic arm joints, and provides haptic feedback to the operator.
                         </p>
 
                         <!-- Secondary Inline Image with Caption -->
                         <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
-                            <img src="assets/ViHaTeleop egg blur.jpg" alt="Teleoperation setup" class="w-full h-48 md:h-64 object-cover rounded-lg">
+                            <div class="relative rounded-lg overflow-hidden">
+                            <video class="w-full h-full object-cover" autoplay loop muted playsinline 
+                                src="assets/thesis_demo.mp4" 
+                                onerror="this.parentElement.innerHTML='<img src=&quot;assets/ViHaTeleop_egg_blur.jpg&quot; alt=&quot;Teleoperation & Haptic Feedback&quot; class=&quot;w-full h-full object-cover&quot;>'">
+                            </video>
+                                <span class="absolute top-2 right-2 bg-slate-900/80 text-blue-400 text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/60 backdrop-blur pointer-events-none flex items-center gap-1 z-10"><i class="fa-solid fa-forward text-[9px]"></i> 2.0x</span>
+                            </div>
                             <figcaption class="text-xs text-slate-400 text-center mt-2 italic">
-                                Fig 1. Visual-haptic teleoperation pipeline featuring real-time kinematic retargeting and tactile feedback.
+                                Using the ViHaTeleop system, the human operator teleoperates the robotic setup to gather visual and tactile demonstration data for machine learning.
                             </figcaption>
                         </figure>
 
-                        <h4 class="text-md font-bold text-white mt-6 mb-2">Behavior Cloning Policy Training</h4>
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Imitation Learning Policy (Behavior Cloning)</h4>
                         <p class="text-slate-300">
-                            Using over 300 collected trajectories, a PyTorch multimodal behavior cloning architecture combines camera visual features and GelSight tactile deformation maps to generate continuous low-level velocity commands.
+                            Using 300 collected demonstration trajectories, a PyTorch  neural network was trained to infer autonomous control laws. This multimodal policy integrates camera visual features and tactile deformation maps to make fine insertion adjustments.
                         </p>
+
+                        <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
+                            <div class="relative rounded-lg overflow-hidden">
+                                <video class="w-full h-full object-cover" autoplay loop muted playsinline src="assets/rollout1.mp4" onerror="this.parentElement.innerHTML='<img src=&quot;assets/ViHaTeleop_egg_blur.jpg&quot; alt=&quot;Autonomous Rollout&quot; class=&quot;w-full h-full object-cover&quot;>'"></video>
+                                <span class="absolute top-2 right-2 bg-slate-900/80 text-blue-400 text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/60 backdrop-blur pointer-events-none flex items-center gap-1 z-10"><i class="fa-solid fa-forward text-[9px]"></i> 2.0x</span>
+                            </div>
+                            <figcaption class="text-xs text-slate-400 text-center mt-2 italic">
+                                The robot autonomously completes the insertion task via learned behavior cloning rollout.
+                            </figcaption>
+                        </figure>
 
                         <!-- Key Research Highlights List -->
                         <div class="mt-6 border-t border-slate-800 pt-4">
                             <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Milestones</h4>
                             <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Co-authored research paper accepted at <strong>IROS 2026</strong>.</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Achieved 88%+ autonomous insertion success rate on uncalibrated soft tubes.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Validated <strong>ViHaTeleop</strong> system with a co-authored research paper accepted at <strong>IROS 2026</strong>.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Collected a dataset of <strong>300 demonstrations</strong> for imitation learning training.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-400 mt-1 text-xs"></i> <span>Engineered end-to-end robot learning pipeline: data collection, visuo-tactile feature extraction, model policy training, and deployment.</span></li>
                             </ul>
                         </div>
                     `
@@ -470,7 +519,7 @@
                     title: 'Contrôle de Vol de Drone Autonome',
                     category: 'Projet d’Ingénieur — Centrale Lyon',
                     buttonHtml: `<a href="assets/Rapport_Final_PE80.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i> Rapport PDF
+                        <i class="fa-solid fa-file-pdf"></i> Rapport de Projet (PDF)
                     </a>`,
                     bodyHtml: `
                         <p class="text-slate-300">
@@ -652,11 +701,11 @@
             buttonContainer.innerHTML = langData.buttonHtml || '';
             dynamicBody.innerHTML = langData.bodyHtml || '';
 
-            // Automatically speed up video playback rate in web browser (1.5x speed)
-            const activeVideo = mediaContainer.querySelector('video');
-            if (activeVideo) {
-                activeVideo.playbackRate = 1.5;
-            }
+            const allModalVideos = modal.querySelectorAll('video');
+            allModalVideos.forEach(vid => {
+                vid.playbackRate = 2.0;
+                vid.addEventListener('play', () => { vid.playbackRate = 1.5; });
+            });
         }
 
         // Language Switcher Function
