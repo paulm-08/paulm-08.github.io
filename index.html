@@ -89,7 +89,6 @@
                 <a href="https://laiyanhou.github.io/ViHaTeleop-website/" target="_blank"
                     class="group bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all duration-300 flex flex-col h-full">
                     <div class="aspect-video w-full bg-slate-950 relative overflow-hidden">
-                        <!-- <img src="assets/vihateleop_sys_overview.png" alt="Overview of the ViHaTeleop system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"> -->
                         <img src="assets/ViHaTeleop_egg_blur.jpg" alt="Overview of the ViHaTeleop system"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -258,10 +257,10 @@
                                 data-en="Engineering Project • Systems & Control"
                                 data-fr="Projet d'Ingénieur • Automatique & Contrôle"></span>
                             <h4 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mt-1"
-                                data-en="Autonomous Flight Control" data-fr="Contrôle de Vol Autonome"></h4>
+                                data-en="Flight Stabilization & Sensing" data-fr="Stabilisation & Capteurs Drone"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-3"
-                                data-en="Real-time object tracking and centering loops on a custom drone system using PID optimization loops."
-                                data-fr="Détection et centrage d'objets en temps réel sur drone physique via boucle de régulation PID.">
+                                data-en="Experimental study on PX4 PID tuning, ultrasonic obstacle telemetry, and OpenCV visual target positioning."
+                                data-fr="Étude expérimentale de la régulation PID sous PX4, de la télémétrie ultrasons et du centrage de cible par OpenCV.">
                             </p>
                         </div>
                         <div class="text-xs text-slate-500 font-semibold mt-4 flex items-center justify-between">
@@ -367,7 +366,6 @@
         const projectData = {
             'masters-thesis': {
                 categoryClass: 'text-blue-400',
-                // heroMediaHtml: `<video class="w-full h-full object-cover rounded-t-2xl" autoplay loop muted playsinline src="assets/thesis_demo.mp4" onerror="this.parentElement.innerHTML='<img src=\\'assets/robot_grasp_focus.jpg\\' class=\\'w-full h-full object-cover rounded-t-2xl\\'>'"></video>`,
                 heroMediaHtml: `<div class="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
                     <img src="assets/robot_grasp_focus.jpg" class="w-full h-full object-cover opacity-80 rounded-t-2xl">
                 </div>`,
@@ -492,7 +490,7 @@
 
                         <h4 class="text-md font-bold text-white mt-6 mb-2">Imitation Learning Policy (Behavior Cloning)</h4>
                         <p class="text-slate-300">
-                            Using 300 collected demonstration trajectories, a PyTorch  neural network was trained to infer autonomous control laws. This multimodal policy integrates camera visual features and tactile deformation maps to make fine insertion adjustments.
+                            Using 300 collected demonstration trajectories, a PyTorch neural network was trained to infer autonomous control laws. This multimodal policy integrates camera visual features and tactile deformation maps to make fine insertion adjustments.
                         </p>
 
                         <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
@@ -523,51 +521,95 @@
                     <img src="assets/drone_blur.png" class="w-full h-full object-cover opacity-80 rounded-t-2xl">
                 </div>`,
                 fr: {
-                    title: 'Contrôle de Vol de Drone Autonome',
-                    category: 'Projet d’Ingénieur — Centrale Lyon',
+                    title: 'Étude et Expérimentation : Drone & Obstacles',
+                    category: 'Projet d’Ingénieur — Centrale Lyon / Centrale Lyon Cosmos',
                     buttonHtml: `<a href="assets/Rapport_Final_PE80.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
                         <i class="fa-solid fa-file-pdf"></i> Rapport de Projet (PDF)
                     </a>`,
                     bodyHtml: `
                         <p class="text-slate-300">
-                            Développement d'un drone quadrirotor autonome opérant sans signal GPS. La mission consistait à détecter une cible visuelle, s'aligner automatiquement au-dessus d'elle et stabiliser le vol stationnaire en temps réel.
-                        </p>
-                        
-                        <h4 class="text-md font-bold text-white mt-4 mb-2">Boucle de Contrôle PID & Vision YOLO</h4>
-                        <p class="text-slate-300">
-                            L'architecture logicielle embarquée traite un flux vidéo via le réseau de détection <strong>YOLO</strong> pour calculer le vecteur d'erreur entre le centre de l'image et le centroïde de l'objet. Ce signal d'erreur alimente des régulateurs PID discrets contrôlant le pitch, le roll et le yaw.
+                            Réalisé dans le cadre de l'association Centrale Lyon Cosmos, ce projet d'étude s'intéresse aux briques technologiques nécessaires à l'autonomie d'un drone quadrirotor : la stabilisation en vol, la détection d'obstacles et la reconnaissance d'image embarquée.
                         </p>
 
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Architecture Matérielle & Logicielle</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Plateforme :</strong> Châssis Holybro QAV250 (4 moteurs DR2205)</li>
+                                <li>• <strong>Contrôleur de Vol :</strong> Pixhawk 4 Mini (Firmware PX4 / QGroundControl)</li>
+                                <li>• <strong>Calcul Embarqué :</strong> Raspberry Pi 4 Model B (4GB)</li>
+                                <li>• <strong>Capteurs & Vision :</strong> Télémètres ultrasons HC-SR04 & Caméra CSI (OpenCV)</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Stabilisation & Réglage de la Régulation PID</h4>
+                        <p class="text-slate-300">
+                            La stabilisation dynamique repose sur le contrôleur Pixhawk 4 Mini sous PX4. L'équipe a conduit le paramétrage et la caractérisation expérimentale de la boucle de régulation PID (correcteurs de vitesse et d'attitude) afin de garantir une tenue en vol stable face aux perturbations.
+                        </p>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Détection d'Obstacles & Reconnaissance de Cible</h4>
+                        <p class="text-slate-300">
+                            Deux sous-systèmes ont été développés et évalués sur banc d'essai :
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li>• <strong>Télémétrie Ultrasons :</strong> Un réseau de capteurs HC-SR04 pilotés par la Raspberry Pi pour mesurer la distance d'obstacles environnants et caractériser l'angle du cône de détection.</li>
+                            <li>• <strong>Vision OpenCV :</strong> Un algorithme de traitement d'image en espace HSV permettant d'isoler une cible visuelle (forme/couleur) et de calculer son écart angulaire par rapport au centre du champ de vision.</li>
+                        </ul>
+
+                        <!-- Key Research Highlights List -->
                         <div class="mt-6 border-t border-slate-800 pt-4">
-                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Réalisations Techniques</h4>
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Résultats & Démonstrateurs</h4>
                             <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Asservissement visuel temps réel avec latence inférieure à 40ms.</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Développement du protocole de communication série/UDP avec le contrôleur de vol.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Réglage et caractérisation de la boucle PID de stabilisation du drone sur banc de test et QGroundControl.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Validation expérimentale de la mesure de distance et du cône de détection des capteurs ultrasons HC-SR04 sur Raspberry Pi.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Développement du script Python/OpenCV d'identification de cible et de calcul de décentrage pour le guidage.</span></li>
                             </ul>
                         </div>
                     `
                 },
                 en: {
-                    title: 'Autonomous Drone Flight Control',
-                    category: 'Engineering Project — Centrale Lyon',
+                    title: 'UAV Flight Stabilization & Obstacle Detection',
+                    category: 'Engineering Project — Centrale Lyon / Centrale Lyon Cosmos',
                     buttonHtml: `<a href="assets/Rapport_Final_PE80.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
                         <i class="fa-solid fa-file-pdf"></i> Project Report (PDF)
                     </a>`,
                     bodyHtml: `
                         <p class="text-slate-300">
-                            Engineered an autonomous quadcopter operating in GPS-denied environments. The system detects ground targets, automatically aligns its trajectory, and maintains steady hover positioning.
-                        </p>
-                        
-                        <h4 class="text-md font-bold text-white mt-4 mb-2">PID Control & YOLO Vision Feed</h4>
-                        <p class="text-slate-300">
-                            An onboard vision pipeline feeds target bounding box offsets from a <strong>YOLO</strong> detector into discrete-time PID control loops adjusting pitch, roll, and yaw angles dynamically.
+                            Carried out in partnership with the student association Centrale Lyon Cosmos, this engineering study focused on core subsystems required for quadrotor autonomy: flight stabilization, environmental obstacle sensing, and onboard computer vision.
                         </p>
 
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-microchip mr-1.5"></i> Hardware & Software Architecture</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Airframe:</strong> Holybro QAV250 Quadrotor (4x DR2205 motors)</li>
+                                <li>• <strong>Flight Controller:</strong> Pixhawk 4 Mini (PX4 Firmware / QGroundControl)</li>
+                                <li>• <strong>Onboard Computer:</strong> Raspberry Pi 4 Model B (4GB)</li>
+                                <li>• <strong>Sensing & Vision:</strong> HC-SR04 ultrasonic rangefinders & CSI camera (OpenCV)</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Flight Stabilization & PID Tuning</h4>
+                        <p class="text-slate-300">
+                            Flight stability relies on the Pixhawk 4 Mini board running PX4 firmware. The team benchmarked and manually tuned the PID velocity and attitude feedback controllers to maintain stable quadrotor dynamics under disturbances.
+                        </p>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Obstacle Detection & Target Recognition Subsystems</h4>
+                        <p class="text-slate-300">
+                            Two core sensing pipelines were implemented and experimentally evaluated:
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li>• <strong>Ultrasonic Telemetry:</strong> An array of HC-SR04 sensors interfaced via Raspberry Pi GPIO to measure obstacle distance and profile the physical detection cone.</li>
+                            <li>• <strong>OpenCV Visual Tracking:</strong> An image processing pipeline in HSV color space designed to isolate specific target colors/shapes and output positional error offsets from the image center.</li>
+                        </ul>
+
+                        <!-- Key Research Highlights List -->
                         <div class="mt-6 border-t border-slate-800 pt-4">
-                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Technical Highlights</h4>
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Deliverables & Experimental Results</h4>
                             <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Real-time visual servoing loop with under 40ms end-to-end latency.</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Robust embedded serial/UDP communication interface with flight hardware.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Parametrization and experimental testing of PX4 flight controller PID loops using QGroundControl.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Characterization of ultrasonic sensor distance response and detection cone angles on GPIO test benches.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-400 mt-1 text-xs"></i> <span>Implementation of onboard Python/OpenCV algorithms for real-time target detection and relative coordinate positioning.</span></li>
                             </ul>
                         </div>
                     `
@@ -716,26 +758,100 @@
                     </a>`,
                     bodyHtml: `
                         <p class="text-slate-300">
-                            Réalisation d'un audit énergétique complet sur la Base Aérienne 942 pour valoriser la chaleur fatale produite par le centre de calcul et les serveurs informatiques.
+                            Ce projet industriel, mené en partenariat avec l'<strong>Armée de l'Air et de l'Espace</strong>, s'inscrit dans une démarche globale d'optimisation énergétique de la Base Aérienne 942 du Mont Verdun, proche de Lyon. Ce site militaire hautement sécurisé abrite des installations informatiques stratégiques enterrées à plus de 100m sous terre, générant une importante quantité de chaleur fatale continuellement évacuée vers l'extérieur.
                         </p>
-                        <p class="text-slate-300 mt-3">
-                            Modélisation thermodynamique démontrant un potentiel de <strong>1,25 MW</strong> de chaleur récupérable et proposition de boucles de transfert thermique vers le chauffage du site.
+
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-shield-halved mr-1.5"></i> Cadre Industriel & Chiffres Clés</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Commanditaires :</strong> Ltt-Colonel H. Krausse & Ltt-Colonel F. Le Maréchal</li>
+                                <li>• <strong>Puissance Récupérable :</strong> 1,25 MW thermique en continu</li>
+                                <li>• <strong>Équivalent Énergétique :</strong> Chauffage annuel de ~1 000 logements</li>
+                                <li>• <strong>Contraintes Particulières :</strong> Sécurité militaire & confidentialité</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Audit de Terrain & Modélisation Thermodynamique</h4>
+                        <p class="text-slate-300">
+                            En collaboration étroite avec le commandement de la base, l'équipe a réalisé plusieurs visites de terrain pour appréhender l'architecture du réseau de refroidissement : circuits primaires et secondaires, tours aéroréfrigérantes et dry coolers. Grâce à des relevés de mesures et une formulation théorique des flux thermiques, nous avons pu modéliser l'ensemble du système de refroidissement et quantifier les pertes énergétiques.
                         </p>
+
+                        <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
+                            <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-950 flex items-center justify-center">
+                                <img src="assets/modele_nobg.png" alt="Schéma du modèle thermodynamique" class="w-full h-full object-contain">
+                            </div>
+                            <figcaption class="text-xs text-slate-400 text-center mt-2 italic">
+                                Schéma du modèle thermodynamique représentant les circuits fermés de la base aérienne et les flux de chaleur associés.
+                            </figcaption>
+                        </figure>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Etude et Proposition de Solution</h4>
+                        <p class="text-slate-300">
+                            Après analyse comparative de plusieurs scénarios de revalorisation (thermoélectricité, stockage thermique, réseau urbain), nous avons préconisé l'intégration directe de cette chaleur fatale dans le réseau de chauffage central de la base via des pompes à chaleur, permettant de substituer la consommation de propane du site.
+                        </p>
+
+                        <!-- Key Research Highlights List -->
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Résultats & Retombées</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-red-400 mt-1 text-xs"></i> <span>Formulation théorique des principes thermodynamiques en jeu et modélisation sous Excel des pertes thermiques et transferts d'énergie.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-red-400 mt-1 text-xs"></i> <span>Démonstration de la faisabilité technique d'une solution revalorisant jusqu'à 0,9 MW de chaleur fatale.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-red-400 mt-1 text-xs"></i> <span>Recommandation technique d'intégration à la chaufferie centrale pour réduire l'empreinte carbone et la facture de propane du site.</span></li>
+                            </ul>
+                        </div>
                     `
                 },
                 en: {
                     title: 'Air Force Base 942 Thermodynamic Audit',
-                    category: 'Industrial Partnership — French Air Force',
+                    category: 'Industrial Partnership — French Air Force / Centrale Lyon',
                     buttonHtml: `<a href="assets/Rapport_fin-de-projet_PAi02.pdf" download target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
                         <i class="fa-solid fa-file-pdf"></i> Audit Report (PDF)
                     </a>`,
                     bodyHtml: `
                         <p class="text-slate-300">
-                            Executed a full thermodynamic audit of Air Force Base 942 server installations to recover industrial waste heat.
+                            This industrial project, conducted in partnership with the <strong>French Air and Space Force</strong>, focused on overall energy optimization for Air Force Base 942 at Mont Verdun near Lyon. This highly secured military site houses strategic IT infrastructure buried over 100m underground, generating significant amounts of waste heat continuously evacuated outdoors.
                         </p>
-                        <p class="text-slate-300 mt-3">
-                            Quantified a continuous potential of <strong>1.25 MW</strong> waste heat and designed energy routing loops integrating industrial heat pumps.
+
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-shield-halved mr-1.5"></i> Industrial Scope & Key Figures</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Sponsors:</strong> Lt-Col H. Krausse & Lt-Col F. Le Maréchal</li>
+                                <li>• <strong>Recoverable Power:</strong> 1.25 MW continuous thermal</li>
+                                <li>• <strong>Energy Equivalent:</strong> Annual heating requirement for ~1,000 homes</li>
+                                <li>• <strong>Core Constraints:</strong> Military defense security & confidentiality</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Field Audit & Thermodynamic Modeling</h4>
+                        <p class="text-slate-300">
+                            In close collaboration with base leadership, the team conducted multiple field audits to map the cooling network architecture: primary and secondary loops, cooling towers, and dry coolers. Based on physical measurements and a theoretical formulation of heat fluxes, we modeled the entire cooling system and quantified thermal losses.
                         </p>
+
+                        <figure class="my-6 border border-slate-800 bg-slate-950 rounded-xl overflow-hidden p-2">
+                            <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-950 flex items-center justify-center">
+                                <img src="assets/modele_nobg.png" alt="Thermodynamic model diagram" class="w-full h-full object-contain">
+                            </div>
+                            <figcaption class="text-xs text-slate-400 text-center mt-2 italic">
+                                Thermodynamic model diagram depicting the air base closed loops and associated heat flows.
+                            </figcaption>
+                        </figure>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Study & Solution Proposals</h4>
+                        <p class="text-slate-300">
+                            After a comparative analysis of several heat recovery scenarios (thermoelectrics, thermal storage, municipal grid extension), we recommended directly integrating this waste heat into the base's central heating loop via heat pumps, offsetting the site's propane consumption.
+                        </p>
+
+                        <!-- Key Research Highlights List -->
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Results & Outcomes</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-red-400 mt-1 text-xs"></i> <span>Formulated theoretical thermodynamic models and built an Excel-based simulation of thermal losses and energy transfer.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-red-400 mt-1 text-xs"></i> <span>Demonstrated technical feasibility of recovering up to 0.9 MW of waste heat continuously.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-red-400 mt-1 text-xs"></i> <span>Provided actionable engineering recommendations for integration with central boilers to cut carbon emissions and propane costs.</span></li>
+                            </ul>
+                        </div>
                     `
                 }
             },
@@ -746,28 +862,84 @@
                 </div>`,
                 fr: {
                     title: 'Gestion de Production & Streaming Live',
-                    category: 'Engagement Associatif & Technique',
+                    category: 'Engagement Associatif & Technique — Centrale Lyon',
                     buttonHtml: '',
                     bodyHtml: `
                         <p class="text-slate-300">
-                            Direction technique de régie vidéo en direct pour les tournois esport de Centrale Lyon diffusés sur Twitch.
+                            L'<strong>E-Challenge</strong> est le volet esport du Challenge, le grand rassemblement sportif inter-écoles d'ingénieurs organisé chaque année sur le campus de l'École Centrale de Lyon. Au sein de l'équipe organisatrice de l'édition 2023, j'étais en charge de la direction technique de la régie vidéo, de la logistique matérielle et des infrastructures informatiques.
                         </p>
-                        <p class="text-slate-300 mt-3">
-                            Gestion des flux vidéo multi-caméras, cartes d'acquisition, overlays réactifs et dépannage réseau à chaud pour des audiences de plus de 2 000 spectateurs uniques.
+
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold uppercase tracking-wider mb-2" style="color: #01ffff;"><i class="fa-solid fa-tower-broadcast mr-1.5"></i> Cadre Événementiel & Fiche Technique</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Événement :</strong> E-Challenge 2023 (Tournoi Inter-Écoles)</li>
+                                <li>• <strong>Jeux :</strong> Trackmania, LoL, SSBU, Rocket League</li>
+                                <li>• <strong>Diffusion & Plateforme :</strong> Twitch (Chaîne Centrale Lyon) / OBS Studio</li>
+                                <li>• <strong>Infrastructures :</strong> start.gg, Discord, Network DSI</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Préparation & Logistique</h4>
+                        <p class="text-slate-300">
+                            La phase de préparation a regroupé la mise en place de la communication sur les réseaux sociaux, la création d'un portail d'inscription personnalisé sur <em>start.gg</em>, la structuration du serveur Discord pour le support des joueurs, la planification du calendrier, la rédaction des règlements ainsi que la création des overlays graphiques sur-mesure pour le flux vidéo Twitch.
                         </p>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Régie Live, Matériel & Support Réseau</h4>
+                        <p class="text-slate-300">
+                            Pendant la compétition, l'équipe a assuré le suivi en direct des arbres de tournoi, la modération du chat et le pilotage du broadcast OBS. Pour garantir un flux sans interruption, nous avons collaboré avec la Direction des Services Informatiques (DSI) afin d'obtenir un accès réseau haut débit dédié. Le dispositif audiovisuel comprenait des caméras et un micro pour les casters, des cartes d'acquisition vidéo, des éclairages ainsi que des webcams joueurs et micros d'ambiance pour les grandes finales jouées en présentiel.
+                        </p>
+
+                        <!-- Key Research Highlights List -->
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Points Clés</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1 text-xs" style="color: #01ffff;"></i> <span>Organisation technique globale pour 4 tournois simultanés (Trackmania, League of Legends, SSBU, Rocket League).</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1 text-xs" style="color: #01ffff;"></i> <span>Mise en place d'une régie vidéo OBS multi-sources et résolution à chaud des difficultés techniques du direct.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1 text-xs" style="color: #01ffff;"></i> <span>Plus de 2000 spectateurs cumulés le long de la semaine de compétition.</span></li>
+                            </ul>
+                        </div>
                     `
                 },
                 en: {
                     title: 'Live Audiovisual Streaming Systems',
-                    category: 'Technical Leadership — Esports',
+                    category: 'Technical Leadership & Extracurricular — Centrale Lyon',
                     buttonHtml: '',
                     bodyHtml: `
                         <p class="text-slate-300">
-                            Technical lead for live esport tournament broadcasts hosted on Twitch for Centrale Lyon.
+                            The <strong>E-Challenge</strong> is the esports counterpart to the annual athletic competition hosted at École Centrale de Lyon, bringing together engineering students from across France. As a key organizer for the 2023 edition, I led streaming operations, hardware infrastructure, and technical logistics.
                         </p>
-                        <p class="text-slate-300 mt-3">
-                            Configured multi-camera capture inputs, live OBS overlays, and audio mixing tables under strict timing constraints for over 2,000 unique online viewers.
+
+                        <!-- Technical Highlight Card -->
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 my-4">
+                            <h4 class="text-xs font-bold uppercase tracking-wider mb-2" style="color: #01ffff;"><i class="fa-solid fa-tower-broadcast mr-1.5"></i> Event Scope & Technical Overview</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                                <li>• <strong>Event:</strong> E-Challenge 2023 (Inter-School Esports)</li>
+                                <li>• <strong>Titles:</strong> Trackmania, LoL, SSBU, Rocket League</li>
+                                <li>• <strong>Broadcasting:</strong> Twitch (Centrale Lyon Channel) / OBS Studio</li>
+                                <li>• <strong>Infrastructure:</strong> start.gg, Discord, Campus Network (DSI)</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Pre-Event Logistics & Digital Setup</h4>
+                        <p class="text-slate-300">
+                            Upfront planning required establishing full event infrastructure: leading social media promotions, constructing a custom registration platform on <em>start.gg</em>, building the Discord server architecture for player support, drafting schedules and rulebooks, and designing custom graphical overlays for the Twitch broadcast.
                         </p>
+
+                        <h4 class="text-md font-bold text-white mt-6 mb-2">Live Broadcast Engineering & On-Site Operations</h4>
+                        <p class="text-slate-300">
+                            During the competition, we managed live brackets, moderated chat channels, and directed the OBS video stream. To guarantee uninterrupted delivery, we collaborated with the campus IT department (DSI) to secure an unrestricted high-bandwidth network connection. Hardware production included caster cameras and microphones, video capture cards, lighting equipment, as well as dedicated player cams and ambient mics for the live on-site finals.
+                        </p>
+
+                        <!-- Key Research Highlights List -->
+                        <div class="mt-6 border-t border-slate-800 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Points</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1 text-xs" style="color: #01ffff;"></i> <span>Coordinated technical logistics for 4 parallel tournamentsaa.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1 text-xs" style="color: #01ffff;"></i> <span>Engineered a multi-source OBS broadcast pipeline and resolved live technical difficulties under pressure.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check mt-1 text-xs" style="color: #01ffff;"></i> <span>Gathered over 2,000 unique spectators throughout the competition week.</span></li>
+                            </ul>
+                        </div>
                     `
                 }
             }
