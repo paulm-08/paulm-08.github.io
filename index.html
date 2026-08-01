@@ -67,9 +67,9 @@
 
                     <!-- Hidden Popover Card -->
                     <div id="email-popover" 
-                        class="hidden absolute bottom-full right-0 mb-3 z-50 min-w-[280px] bg-slate-900 border border-slate-700/80 rounded-xl p-3 shadow-xl backdrop-blur-md transition-all">
+                        class="hidden absolute top-full right-0 mt-1 z-50 min-w-[280px] bg-slate-900 border border-slate-700/80 rounded-xl p-2 shadow-xl backdrop-blur-md transition-all">
                         
-                        <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center justify-between gap-2 ml-2">
                             <!-- Obfuscated Container (Filled via JavaScript) -->
                             <a id="email-link" href="#" class="text-sm font-mono text-slate-200 hover:text-cyan-400 truncate transition-colors">
                                 <span id="email-display" class="italic text-slate-500">Loading...</span>
@@ -81,13 +81,13 @@
                                 <button onclick="copyObfuscatedEmail()" 
                                         title="Copy Address" 
                                         class="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-all">
-                                    <i id="popover-copy-icon" class="fa-regular fa-copy text-sm w-4"></i>
+                                    <i id="popover-copy-icon" class="fa-regular fa-copy text-md w-4"></i>
                                 </button>
                             </div>
                         </div>
 
                         <!-- Subtle Arrow Pointer -->
-                        <div class="absolute top-full right-3 -mt-1 w-2.5 h-2.5 bg-slate-900 border-r border-b border-slate-700/80 rotate-45"></div>
+                        <div class="absolute bottom-full right-3 -mb-1 w-2.5 h-2.5 bg-slate-900 border-l border-t border-slate-700/80 rotate-45"></div>
                     </div>
                 </div>
 
@@ -1099,10 +1099,10 @@
         const fullEmail = getDecodedEmail();
         navigator.clipboard.writeText(fullEmail).then(() => {
             const icon = document.getElementById('popover-copy-icon');
-            icon.className = "fa-solid fa-check text-green-400 text-sm w-4";
+            icon.className = "fa-solid fa-check text-green-400 text-md w-4";
             
             setTimeout(() => {
-                icon.className = "fa-regular fa-copy text-sm w-4";
+                icon.className = "fa-regular fa-copy text-md w-4";
             }, 2000);
         });
     }
