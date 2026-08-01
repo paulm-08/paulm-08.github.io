@@ -33,64 +33,71 @@
             </div>
             <!-- Dynamic CV downloads, social link tags and Language Switcher -->
             <div class="flex flex-wrap items-center gap-3">
-                <!-- Language Toggle Button -->
-                <button onclick="toggleLanguage()"
-                    class="bg-slate-800 hover:bg-slate-700 text-blue-400 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-globe"></i>
-                    <span id="langToggleLabel">FR | EN</span>
-                </button>
 
-                <a href="./assets/MAESTRE_PAUL_CV_en.pdf" download
-                    class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
-                    <i class="fa-solid fa-download"></i> CV (EN)
-                </a>
-                <a href="./assets/MAESTRE_PAUL_CV_fr.pdf" download
-                    class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
-                    <i class="fa-solid fa-download"></i> CV (FR)
-                </a>
-                <a href="https://www.linkedin.com/in/paul-maestre/" target="_blank"
-                    class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/paulm-08" target="_blank"
-                    class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <!-- Email Popover Container -->
-                <div class="relative inline-block">
-                    <!-- Main Envelope Button -->
-                    <button onclick="toggleEmailPopover(event)" 
-                            title="Contact Email" 
-                            class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors focus:outline-none">
-                        <i class="fa-solid fa-envelope"></i>
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Language Toggle Button -->
+                    <button onclick="toggleLanguage()"
+                        class="bg-slate-800 hover:bg-slate-700 text-blue-400 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="langToggleLabel">FR | EN</span>
                     </button>
 
-                    <!-- Hidden Popover Card -->
-                    <div id="email-popover" 
-                        class="hidden absolute top-full right-0 mt-1 z-50 min-w-[280px] bg-slate-900 border border-slate-700/80 rounded-xl p-2 shadow-xl backdrop-blur-md transition-all">
-                        
-                        <div class="flex items-center justify-between gap-2 ml-2">
-                            <!-- Obfuscated Container (Filled via JavaScript) -->
-                            <a id="email-link" href="#" class="text-sm font-mono text-slate-200 hover:text-cyan-400 truncate transition-colors">
-                                <span id="email-display" class="italic text-slate-500">Loading...</span>
-                            </a>
-
-                            <!-- Action Buttons -->
-                            <div class="items-center gap-1 border-l border-slate-700/70 pl-2">
-                                <!-- Copy Button -->
-                                <button onclick="copyObfuscatedEmail()" 
-                                        title="Copy Address" 
-                                        class="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-all">
-                                    <i id="popover-copy-icon" class="fa-regular fa-copy text-md w-4"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Subtle Arrow Pointer -->
-                        <div class="absolute bottom-full right-3 -mb-1 w-2.5 h-2.5 bg-slate-900 border-l border-t border-slate-700/80 rotate-45"></div>
-                    </div>
+                    <a href="./assets/MAESTRE_PAUL_CV_en.pdf" download
+                        class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                        <i class="fa-solid fa-download"></i> CV (EN)
+                    </a>
+                    <a href="./assets/MAESTRE_PAUL_CV_fr.pdf" download
+                        class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                        <i class="fa-solid fa-download"></i> CV (FR)
+                    </a>
                 </div>
 
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="https://www.linkedin.com/in/paul-maestre/" target="_blank"
+                        class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/paulm-08" target="_blank"
+                        class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <!-- Email Popover Container -->
+                    <div class="relative inline-block">
+                        <!-- Main Envelope Button -->
+                        <button onclick="toggleEmailPopover(event)" title="Contact Email"
+                            class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors focus:outline-none">
+                            <i class="fa-solid fa-envelope"></i>
+                        </button>
+
+                        <!-- Hidden Popover Card -->
+                        <div id="email-popover"
+                            class="hidden absolute top-full right-0 mt-1 z-50 min-w-[280px] bg-slate-900 border border-slate-700/80 rounded-xl p-2 shadow-xl backdrop-blur-md transition-all">
+
+                            <div class="flex items-center justify-between gap-2 ml-2">
+                                <!-- Obfuscated Container (Filled via JavaScript) -->
+                                <a id="email-link" href="#"
+                                    class="text-sm font-mono text-slate-200 hover:text-cyan-400 truncate transition-colors">
+                                    <span id="email-display" class="italic text-slate-500">Loading...</span>
+                                </a>
+
+                                <!-- Action Buttons -->
+                                <div class="items-center gap-1 border-l border-slate-700/70 pl-2">
+                                    <!-- Copy Button -->
+                                    <button onclick="copyObfuscatedEmail()" title="Copy Address"
+                                        class="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-all">
+                                        <i id="popover-copy-icon" class="fa-regular fa-copy text-md w-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Subtle Arrow Pointer -->
+                            <div
+                                class="absolute bottom-full right-3 -mb-1 w-2.5 h-2.5 bg-slate-900 border-l border-t border-slate-700/80 rotate-45">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </header>
@@ -219,7 +226,8 @@
                                 data-en="Engineering Internship • Biomedical"
                                 data-fr="Stage d'Ingénieur • Génie Biomédical"></span>
                             <h4 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mt-1"
-                                data-en="Freehand 3D Ultrasound Reconstruction" data-fr="Reconstruction Échographique 3D à Main Levée"></h4>
+                                data-en="Freehand 3D Ultrasound Reconstruction"
+                                data-fr="Reconstruction Échographique 3D à Main Levée"></h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-5"
                                 data-en="Integrating electromagnetic trakSTAR spatial trackers with raw ultrasound captures to construct volumetric representations."
                                 data-fr="Synchronisation d'un capteur électromagnétique trakSTAR avec un échographe pour la reconstruction volumique 3D.">
@@ -255,7 +263,8 @@
                                 data-en="Industrial Project • Thermodynamics"
                                 data-fr="Projet Industriel • Thermodynamique"></span>
                             <h4 class="text-lg font-bold text-white group-hover:text-red-400 transition-colors mt-1"
-                                data-en="Energy Audit of Air Force Base 942" data-fr="Audit Energétique de la Base 942"></h4>
+                                data-en="Energy Audit of Air Force Base 942" data-fr="Audit Energétique de la Base 942">
+                            </h4>
                             <p class="text-sm text-slate-400 mt-2 line-clamp-5"
                                 data-en="Audit and modeling of waste heat recovery (1.25 MW) from server facilities for the heating needs of the base."
                                 data-fr="Audit et modélisation de solutions de récupération de chaleur fatale (1,25 MW) des serveurs pour le chauffage de la base.">
@@ -1071,49 +1080,49 @@
             updateDOM();
         });
 
-    const emailUser = "paulmaestre08";
-    const emailDomain = "gmail.com";
-    
-    function getDecodedEmail() {
-        return `${emailUser}@${emailDomain}`;
-    }
+        const emailUser = "paulmaestre08";
+        const emailDomain = "gmail.com";
 
-    function toggleEmailPopover(event) {
-        event.stopPropagation();
-        const popover = document.getElementById('email-popover');
-        const display = document.getElementById('email-display');
-        const link = document.getElementById('email-link');
-        
-        const fullEmail = getDecodedEmail();
-        
-        // Assemble real email dynamically upon user click
-        display.textContent = fullEmail;
-        display.classList.remove('italic', 'text-slate-500');
-        link.href = `mailto:${fullEmail}`;
-        
-        // Toggle visibility
-        popover.classList.toggle('hidden');
-    }
-
-    function copyObfuscatedEmail() {
-        const fullEmail = getDecodedEmail();
-        navigator.clipboard.writeText(fullEmail).then(() => {
-            const icon = document.getElementById('popover-copy-icon');
-            icon.className = "fa-solid fa-check text-green-400 text-md w-4";
-            
-            setTimeout(() => {
-                icon.className = "fa-regular fa-copy text-md w-4";
-            }, 2000);
-        });
-    }
-
-    // Close popover when clicking anywhere else on the page
-    document.addEventListener('click', (e) => {
-        const popover = document.getElementById('email-popover');
-        if (popover && !popover.contains(e.target) && !popover.classList.contains('hidden')) {
-            popover.classList.add('hidden');
+        function getDecodedEmail() {
+            return `${emailUser}@${emailDomain}`;
         }
-    });
+
+        function toggleEmailPopover(event) {
+            event.stopPropagation();
+            const popover = document.getElementById('email-popover');
+            const display = document.getElementById('email-display');
+            const link = document.getElementById('email-link');
+
+            const fullEmail = getDecodedEmail();
+
+            // Assemble real email dynamically upon user click
+            display.textContent = fullEmail;
+            display.classList.remove('italic', 'text-slate-500');
+            link.href = `mailto:${fullEmail}`;
+
+            // Toggle visibility
+            popover.classList.toggle('hidden');
+        }
+
+        function copyObfuscatedEmail() {
+            const fullEmail = getDecodedEmail();
+            navigator.clipboard.writeText(fullEmail).then(() => {
+                const icon = document.getElementById('popover-copy-icon');
+                icon.className = "fa-solid fa-check text-green-400 text-md w-4";
+
+                setTimeout(() => {
+                    icon.className = "fa-regular fa-copy text-md w-4";
+                }, 2000);
+            });
+        }
+
+        // Close popover when clicking anywhere else on the page
+        document.addEventListener('click', (e) => {
+            const popover = document.getElementById('email-popover');
+            if (popover && !popover.contains(e.target) && !popover.classList.contains('hidden')) {
+                popover.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 
