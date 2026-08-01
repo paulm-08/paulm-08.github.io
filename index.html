@@ -48,7 +48,7 @@
                     class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors">
                     <i class="fa-solid fa-download"></i> CV (FR)
                 </a>
-                <a href="https://www.linkedin.com/in/paul-maestre-922ab0238/" target="_blank"
+                <a href="https://www.linkedin.com/in/paul-maestre/" target="_blank"
                     class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="LinkedIn">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
@@ -56,10 +56,41 @@
                     class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="mailto:paulmaestre08@gmail.com"
-                    class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors" title="Email">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
+                <!-- Email Popover Container -->
+                <div class="relative inline-block">
+                    <!-- Main Envelope Button -->
+                    <button onclick="toggleEmailPopover(event)" 
+                            title="Contact Email" 
+                            class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors focus:outline-none">
+                        <i class="fa-solid fa-envelope"></i>
+                    </button>
+
+                    <!-- Hidden Popover Card -->
+                    <div id="email-popover" 
+                        class="hidden absolute bottom-full right-0 mb-3 z-50 min-w-[280px] bg-slate-900 border border-slate-700/80 rounded-xl p-3 shadow-xl backdrop-blur-md transition-all">
+                        
+                        <div class="flex items-center justify-between gap-2">
+                            <!-- Obfuscated Container (Filled via JavaScript) -->
+                            <a id="email-link" href="#" class="text-sm font-mono text-slate-200 hover:text-cyan-400 truncate transition-colors">
+                                <span id="email-display" class="italic text-slate-500">Loading...</span>
+                            </a>
+
+                            <!-- Action Buttons -->
+                            <div class="items-center gap-1 border-l border-slate-700/70 pl-2">
+                                <!-- Copy Button -->
+                                <button onclick="copyObfuscatedEmail()" 
+                                        title="Copy Address" 
+                                        class="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-all">
+                                    <i id="popover-copy-icon" class="fa-regular fa-copy text-sm w-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Subtle Arrow Pointer -->
+                        <div class="absolute top-full right-3 -mt-1 w-2.5 h-2.5 bg-slate-900 border-r border-b border-slate-700/80 rotate-45"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
@@ -1039,6 +1070,50 @@
         window.addEventListener('DOMContentLoaded', () => {
             updateDOM();
         });
+
+    const emailUser = "paulmaestre08";
+    const emailDomain = "gmail.com";
+    
+    function getDecodedEmail() {
+        return `${emailUser}@${emailDomain}`;
+    }
+
+    function toggleEmailPopover(event) {
+        event.stopPropagation();
+        const popover = document.getElementById('email-popover');
+        const display = document.getElementById('email-display');
+        const link = document.getElementById('email-link');
+        
+        const fullEmail = getDecodedEmail();
+        
+        // Assemble real email dynamically upon user click
+        display.textContent = fullEmail;
+        display.classList.remove('italic', 'text-slate-500');
+        link.href = `mailto:${fullEmail}`;
+        
+        // Toggle visibility
+        popover.classList.toggle('hidden');
+    }
+
+    function copyObfuscatedEmail() {
+        const fullEmail = getDecodedEmail();
+        navigator.clipboard.writeText(fullEmail).then(() => {
+            const icon = document.getElementById('popover-copy-icon');
+            icon.className = "fa-solid fa-check text-green-400 text-sm w-4";
+            
+            setTimeout(() => {
+                icon.className = "fa-regular fa-copy text-sm w-4";
+            }, 2000);
+        });
+    }
+
+    // Close popover when clicking anywhere else on the page
+    document.addEventListener('click', (e) => {
+        const popover = document.getElementById('email-popover');
+        if (popover && !popover.contains(e.target) && !popover.classList.contains('hidden')) {
+            popover.classList.add('hidden');
+        }
+    });
     </script>
 </body>
 
