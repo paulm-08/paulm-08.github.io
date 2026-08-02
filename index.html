@@ -64,39 +64,37 @@
                     <!-- Email Popover Container -->
                     <div class="relative inline-block">
                         <!-- Main Envelope Button -->
-                        <button onclick="toggleEmailPopover(event)" title="Contact Email"
+                        <button id="popover-btn" onclick="toggleEmailPopover(event)" title="Contact Email"
                             class="text-slate-400 hover:text-white text-xl p-1.5 transition-colors focus:outline-none">
                             <i class="fa-solid fa-envelope"></i>
                         </button>
 
                         <!-- Hidden Popover Card -->
                         <div id="email-popover"
-                            class="hidden absolute top-full right-0 mt-1 z-50 min-w-[280px] bg-slate-900 border border-slate-700/80 rounded-xl p-2 shadow-xl backdrop-blur-md transition-all">
+                            class="hidden absolute top-full mt-0 z-50 w-fit max-w-[calc(100vw-2rem)] bg-slate-900 border border-slate-700/80 rounded-xl p-2 shadow-xl backdrop-blur-md">
 
                             <div class="flex items-center justify-between gap-2 ml-2">
-                                <!-- Obfuscated Container (Filled via JavaScript) -->
+                                <!-- Obfuscated Link -->
                                 <a id="email-link" href="#"
                                     class="text-sm font-mono text-slate-200 hover:text-cyan-400 truncate transition-colors">
                                     <span id="email-display" class="italic text-slate-500">Loading...</span>
                                 </a>
 
                                 <!-- Action Buttons -->
-                                <div class="items-center gap-1 border-l border-slate-700/70 pl-2">
-                                    <!-- Copy Button -->
-                                    <button onclick="copyObfuscatedEmail()" title="Copy Address"
+                                <div class="flex items-center gap-1 border-l border-slate-700/70 pl-2">
+                                    <button onclick="copyObfuscatedEmail(event)" title="Copy Address"
                                         class="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-all">
                                         <i id="popover-copy-icon" class="fa-regular fa-copy text-md w-4"></i>
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Subtle Arrow Pointer -->
-                            <div
-                                class="absolute bottom-full right-3 -mb-1 w-2.5 h-2.5 bg-slate-900 border-l border-t border-slate-700/80 rotate-45">
+                            <!-- Dynamic Arrow Pointer -->
+                            <div id="popover-arrow"
+                                class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-slate-900 border-l border-t border-slate-700/80 rotate-45 pointer-events-none">
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -106,8 +104,8 @@
         <!-- INTRO TAGLINE -->
         <section class="max-w-3xl mb-16">
             <h2 id="introHeading" class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight"
-                data-en="Engineering multi-disciplinary physical systems and modern AI."
-                data-fr="Ingénierie de systèmes physiques multidisciplinaires et IA moderne.">
+                data-en="Engineering multi-disciplinary intelligent systems."
+                data-fr="Ingénierie de systèmes pluridisciplinaires et intelligents.">
             </h2>
             <p id="introBody" class="text-lg text-slate-300 leading-relaxed"
                 data-en="Graduate of École Centrale de Lyon and Tohoku University in Japan. I design systems integrating automatic control, computer vision and Artificial Intelligence."
@@ -1087,6 +1085,83 @@
             return `${emailUser}@${emailDomain}`;
         }
 
+        function closeEmailPopover() {
+            const popover = document.getElementById('email-popover');
+            if (popover && !popover.classList.contains('hidden')) {
+                popover.classList.add('hidden');
+            }
+        }
+
+        function positionEmailPopover() {
+            const popover = document.getElementById('email-popover');
+            const button = document.getElementById('popover-btn');
+            const arrow = document.getElementById('popover-arrow');
+
+            if (!popover || !button || !arrow || popover.classList.contains('hidden')) {
+                return;
+            }
+
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const margin = 24;
+
+            const desiredLeft = buttonRect.left + (buttonRect.width / 2) - (popoverRect.width / 2);
+            const clampedLeft = Math.min(Math.max(desiredLeft, margin), viewportWidth - popoverRect.width - margin);
+
+            popover.style.position = 'fixed';
+            popover.style.left = `${clampedLeft}px`;
+            popover.style.top = `${buttonRect.bottom + 8}px`;
+            popover.style.right = 'auto';
+            popover.style.bottom = 'auto';
+
+            const arrowLeft = buttonRect.left + (buttonRect.width / 2) - clampedLeft;
+            arrow.style.left = `${Math.max(12, Math.min(arrowLeft, popoverRect.width - 12))}px`;
+            arrow.style.right = 'auto';
+        }
+
+        function handleDocumentClick(event) {
+            const popover = document.getElementById('email-popover');
+            const button = document.getElementById('popover-btn');
+
+            if (!popover || popover.classList.contains('hidden')) {
+                return;
+            }
+
+            const clickedInsidePopover = popover.contains(event.target);
+            const clickedButton = button.contains(event.target);
+
+            if (!clickedInsidePopover && !clickedButton) {
+                closeEmailPopover();
+            }
+        }
+
+        function copyObfuscatedEmail(event) {
+            event.stopPropagation();
+            const fullEmail = getDecodedEmail();
+            const copyIcon = document.getElementById('popover-copy-icon');
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullEmail).catch(() => {
+                    console.warn('Clipboard write failed');
+                });
+            } else {
+                const temporaryInput = document.createElement('input');
+                temporaryInput.value = fullEmail;
+                document.body.appendChild(temporaryInput);
+                temporaryInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(temporaryInput);
+            }
+
+            if (copyIcon) {
+                copyIcon.className = 'fa-solid fa-check text-md text-green-400 w-4';
+                setTimeout(() => {
+                    copyIcon.className = 'fa-regular fa-copy text-md w-4';
+                }, 1200);
+            }
+        }
+
         function toggleEmailPopover(event) {
             event.stopPropagation();
             const popover = document.getElementById('email-popover');
@@ -1094,35 +1169,24 @@
             const link = document.getElementById('email-link');
 
             const fullEmail = getDecodedEmail();
-
-            // Assemble real email dynamically upon user click
             display.textContent = fullEmail;
             display.classList.remove('italic', 'text-slate-500');
             link.href = `mailto:${fullEmail}`;
 
-            // Toggle visibility
             popover.classList.toggle('hidden');
+
+            if (!popover.classList.contains('hidden')) {
+                requestAnimationFrame(positionEmailPopover);
+            }
         }
 
-        function copyObfuscatedEmail() {
-            const fullEmail = getDecodedEmail();
-            navigator.clipboard.writeText(fullEmail).then(() => {
-                const icon = document.getElementById('popover-copy-icon');
-                icon.className = "fa-solid fa-check text-green-400 text-md w-4";
-
-                setTimeout(() => {
-                    icon.className = "fa-regular fa-copy text-md w-4";
-                }, 2000);
-            });
-        }
-
-        // Close popover when clicking anywhere else on the page
-        document.addEventListener('click', (e) => {
-            const popover = document.getElementById('email-popover');
-            if (popover && !popover.contains(e.target) && !popover.classList.contains('hidden')) {
-                popover.classList.add('hidden');
+        window.addEventListener('resize', function () {
+            if (!document.getElementById('email-popover').classList.contains('hidden')) {
+                positionEmailPopover();
             }
         });
+
+        document.addEventListener('click', handleDocumentClick);
     </script>
 </body>
 
